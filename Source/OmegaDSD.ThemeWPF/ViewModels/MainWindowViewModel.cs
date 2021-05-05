@@ -32,5 +32,28 @@ namespace OmegaDSD.ThemeWPF.ViewModels
         public ObservableCollection<PersonModel> PersonCollection { get; } = new ObservableCollection<PersonModel>();
 
         public ThemeCollection ThemeCollection { get; } = new ThemeCollection();
+
+        private ThemeModel selectedTheme;
+
+        public ThemeModel SelectedTheme
+        {
+            get => selectedTheme;
+            set
+            {
+                if (value != selectedTheme)
+                {
+                    if (value.Theme is null)
+                    {
+                        ThemeManager.RemoveTheme();
+                    }
+                    else
+                    {
+                        ThemeManager.ChangeTheme((Theme)value.Theme);
+                    }
+
+                    RaisePropertyChanged(ref selectedTheme, value);
+                }                
+            }
+        }
     }
 }

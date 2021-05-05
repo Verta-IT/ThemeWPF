@@ -8,6 +8,7 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:themes="clr-namespace:OmegaDSD.ThemeWPF.Themes"
         xmlns:vm="clr-namespace:OmegaDSD.ThemeWPF.ViewModels"
+        xmlns:views="clr-namespace:OmegaDSD.ThemeWPF.Views"
         Title="MainWindow"
         Width="800"
         Height="450"
@@ -21,25 +22,6 @@
             <ColumnDefinition Width="150" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Grid Margin="5">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <GroupBox Grid.Row="0" Header="Select theme">
-                <ListBox BorderThickness="0" ItemsSource="{Binding ThemeCollection}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <RadioButton Content="{Binding Name}" IsChecked="{Binding IsSelected, Mode=TwoWay}" />
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </GroupBox>
-            <GroupBox Grid.Row="1"
-                      Margin="0,5,0,0"
-                      Header="Controls">
-                <ListBox BorderThickness="0" />
-            </GroupBox>
-        </Grid>
+        <views:ThemeManagerUserControl Grid.Column="0"/>
     </Grid>
 </Window>

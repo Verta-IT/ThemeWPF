@@ -7,37 +7,18 @@ using System.Threading.Tasks;
 
 namespace OmegaDSD.ThemeWPF.Models
 {
-    public class ThemeModel : NotifyPropertyChanged
+    public class ThemeModel
     {
         public ThemeModel(Theme? theme)
         {
             Theme = theme;
-            Name = (theme is null) ? "None" : theme.ToString();
         }
-
-        public string Name { get; private set; }
 
         public Theme? Theme { get; private set; }
 
-        public bool IsSelected
+        public override string ToString()
         {
-            get => ThemeManager.CurrentTheme == Theme;
-            set
-            {
-                if (ThemeManager.CurrentTheme != Theme)
-                {
-                    if (Theme is null)
-                    {
-                        ThemeManager.RemoveTheme();
-                    }
-                    else
-                    {
-                        ThemeManager.ChangeTheme((Theme)Theme);
-                    }
-
-                    RaisePropertyChanged();
-                }
-            }
+            return (Theme is null) ? "None" : Theme.ToString();
         }
     }
 }
