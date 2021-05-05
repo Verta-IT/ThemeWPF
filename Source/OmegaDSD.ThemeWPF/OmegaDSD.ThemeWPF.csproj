@@ -72,6 +72,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Themes\Converters\TreeViewMarginConverter.cs" />
     <Compile Include="Themes\DarkTheme.xaml.cs">
