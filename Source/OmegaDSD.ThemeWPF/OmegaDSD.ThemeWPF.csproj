@@ -74,6 +74,7 @@
     </Compile>
     <Compile Include="Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Models\PersonModel.cs" />
+    <Compile Include="Models\ThemeModel.cs" />
     <Compile Include="Themes\Converters\TreeViewMarginConverter.cs" />
     <Compile Include="Themes\DarkTheme.xaml.cs">
       <DependentUpon>DarkTheme.xaml</DependentUpon>
@@ -83,6 +84,7 @@
     </Compile>
     <Compile Include="Themes\ThemeManager.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Models\NotifyPropertyChanged.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

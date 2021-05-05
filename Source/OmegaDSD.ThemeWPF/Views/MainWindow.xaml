@@ -1,12 +1,45 @@
 ﻿<Window x:Class="OmegaDSD.ThemeWPF.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cv="clr-namespace:OmegaDSD.ThemeWPF.Converters"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OmegaDSD.ThemeWPF"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:themes="clr-namespace:OmegaDSD.ThemeWPF.Themes"
+        xmlns:vm="clr-namespace:OmegaDSD.ThemeWPF.ViewModels"
+        Title="MainWindow"
+        Width="800"
+        Height="450"
+        Style="{DynamicResource WindowStyle}"
+        mc:Ignorable="d">
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Row="0" Header="Select theme">
+                <ListBox BorderThickness="0" ItemsSource="{Binding ThemeCollection}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <RadioButton Content="{Binding Name}" IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </GroupBox>
+            <GroupBox Grid.Row="1"
+                      Margin="0,5,0,0"
+                      Header="Controls">
+                <ListBox BorderThickness="0" />
+            </GroupBox>
+        </Grid>
     </Grid>
 </Window>

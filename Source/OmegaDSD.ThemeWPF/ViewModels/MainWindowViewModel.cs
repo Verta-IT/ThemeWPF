@@ -1,23 +1,22 @@
 ﻿using OmegaDSD.ThemeWPF.Models;
 using OmegaDSD.ThemeWPF.Themes;
+using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 
 namespace OmegaDSD.ThemeWPF.ViewModels
 {
-    public abstract class NotifyPropertyChanged : INotifyPropertyChanged
+    public class ThemeCollection : ObservableCollection<ThemeModel>
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void RaisePropertyChanged<T>(ref T property, T newValue, [System.Runtime.CompilerServices.CallerMemberName] string propertyName = "")
+        public ThemeCollection()
         {
-            property = newValue;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+            Array themeList = Enum.GetValues(typeof(Theme));
 
-        public void RaisePropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            Add(new ThemeModel(null));
+
+            foreach (object theme in themeList)
+            {
+                Add(new ThemeModel((Theme)theme));
+            }
         }
     }
 
@@ -32,22 +31,6 @@ namespace OmegaDSD.ThemeWPF.ViewModels
 
         public ObservableCollection<PersonModel> PersonCollection { get; } = new ObservableCollection<PersonModel>();
 
-        public Theme? SelectedTheme
-        {
-            get => ThemeManager.CurrentTheme;
-            set
-            {
-                if (value != null)
-                {
-                    ThemeManager.ChangeTheme((Theme)value);
-                }
-                else
-                {
-                    ThemeManager.RemoveTheme();
-                }
-
-                RaisePropertyChanged();
-            }
-        }
+        public ThemeCollection ThemeCollection { get; } = new ThemeCollection();
     }
 }
