@@ -72,6 +72,9 @@
     <Compile Include="Views\ObjectPanels\SlidersPanel.xaml.cs">
       <DependentUpon>SlidersPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ObjectPanels\TabControlsPanel.xaml.cs">
+      <DependentUpon>TabControlsPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ObjectPanels\TextBoxesPanel.xaml.cs">
       <DependentUpon>TextBoxesPanel.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ObjectPanels\SlidersPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ObjectPanels\TabControlsPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
