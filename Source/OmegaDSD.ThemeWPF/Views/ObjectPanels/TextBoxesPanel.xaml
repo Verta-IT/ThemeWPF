@@ -46,14 +46,14 @@
         <TextBox Margin="0,5,0,0"
                  IsEnabled="False"
                  Text="Disabled Text Box" />
-        <RichTextBox Height="60" Margin="0,5,0,0">
+        <RichTextBox VerticalScrollBarVisibility="Auto" Height="60" Margin="0,5,0,0">
             <FlowDocument>
                 <Paragraph>
                     Rich Text Box
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <RichTextBox Height="60" Margin="0,5,0,0" IsEnabled="False">
+        <RichTextBox VerticalScrollBarVisibility="Auto" Height="60" Margin="0,5,0,0" IsEnabled="False">
             <FlowDocument>
                 <Paragraph>
                     Disabled Rich Text Box
