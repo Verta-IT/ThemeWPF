@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             d:DesignHeight="165"
+             d:DesignHeight="230"
              d:DesignWidth="250"
              DataContext="{x:Null}"
              Name="CheckBoxes"
@@ -27,5 +27,8 @@
                   HorizontalAlignment="Left"
                   IsChecked="True"
                   Style="{DynamicResource AzureToggleSwitchStyle}" />
+        <RadioButton Content="Radio Button 1"/>
+        <RadioButton Content="Radio Button 2"/>
+        <RadioButton Content="Radio Button 3"/>
     </StackPanel>
 </UserControl>
