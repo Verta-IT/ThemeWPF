@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="OmegaDSD.ThemeWPF.Views.ObjectPanels.TreeViewPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Name="TreeView"
+             d:DesignHeight="240"
+             d:DesignWidth="235"
+             mc:Ignorable="d">
+    <TreeView>
+        <TreeViewItem Header="Tree View Item">
+            <TreeViewItem Header="Tree View Item" />
+            <TreeViewItem Header="Tree View Item">
+                <TreeViewItem Header="Tree View Item" />
+                <TreeViewItem Header="Tree View Item" />
+                <TreeViewItem Header="Tree View Item" />
+            </TreeViewItem>
+            <TreeViewItem Header="Tree View Item" />
+        </TreeViewItem>
+        <TreeViewItem Header="Tree View Item" />
+        <TreeViewItem Header="Tree View Item" />
+    </TreeView>
+</UserControl>

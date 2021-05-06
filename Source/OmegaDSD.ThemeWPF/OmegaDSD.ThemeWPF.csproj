@@ -81,6 +81,9 @@
     <Compile Include="Views\ObjectPanels\TextsPanel.xaml.cs">
       <DependentUpon>TextsPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ObjectPanels\TreeViewPanel.xaml.cs">
+      <DependentUpon>TreeViewPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ThemeManagerUserControl.xaml.cs">
       <DependentUpon>ThemeManagerUserControl.xaml</DependentUpon>
     </Compile>
@@ -146,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ObjectPanels\TextsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ObjectPanels\TreeViewPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

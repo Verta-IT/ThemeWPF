@@ -37,6 +37,7 @@ namespace OmegaDSD.ThemeWPF.ViewModels
             ObjectPanelsCollection.Add(new ListsPanel());
             ObjectPanelsCollection.Add(new ExpandersPanel());
             ObjectPanelsCollection.Add(new TabControlsPanel());
+            ObjectPanelsCollection.Add(new TreeViewPanel());
 
             if (ObjectPanelsCollection.Count > 0)
             {
