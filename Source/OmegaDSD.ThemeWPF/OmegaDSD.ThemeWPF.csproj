@@ -59,6 +59,9 @@
     <Compile Include="Views\ObjectPanels\CheckBoxesPanel.xaml.cs">
       <DependentUpon>CheckBoxesPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ObjectPanels\SlidersPanel.xaml.cs">
+      <DependentUpon>SlidersPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ObjectPanels\TextBoxesPanel.xaml.cs">
       <DependentUpon>TextBoxesPanel.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\ObjectPanels\CheckBoxesPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ObjectPanels\SlidersPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
