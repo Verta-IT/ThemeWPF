@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="OmegaDSD.ThemeWPF.Views.ObjectPanels.ListsPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:OmegaDSD.ThemeWPF.ViewModels"
+             Name="Lists"
+             d:DesignHeight="416"
+             d:DesignWidth="732"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <vm:ListsViewModel />
+    </UserControl.DataContext>
+    <StackPanel>
+        <TextBlock Margin="0,5,0,0" Text="List Box" />
+        <ListBox Margin="10,5,0,0" Height="90" ItemsSource="{Binding PersonCollection}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} ({1})">
+                                <Binding Mode="OneWay" Path="Name" />
+                                <Binding Mode="OneWay" Path="Age" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Margin="0,5,0,0" Text="List View" />
+        <ListView Margin="10,5,0,0" Height="120"
+                  HorizontalContentAlignment="Stretch"
+                  ItemsSource="{Binding PersonCollection}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="Auto"
+                                    DisplayMemberBinding="{Binding Name}"
+                                    Header="First" />
+                    <GridViewColumn Width="Auto"
+                                    DisplayMemberBinding="{Binding Age}"
+                                    Header="Second" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock Margin="0,5,0,0" Text="Data Grid" />
+        <DataGrid Margin="10,5,0,0"
+                  Height="125"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="True"
+                  ItemsSource="{Binding PersonCollection}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
+                <DataGridTextColumn Binding="{Binding Age}" Header="Value" />
+                <DataGridTemplateColumn Header="Active">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</UserControl>

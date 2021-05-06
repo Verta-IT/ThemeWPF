@@ -29,11 +29,12 @@ namespace OmegaDSD.ThemeWPF.ViewModels
     {
         public MainWindowViewModel()
         {
-            PersonCollection.Add(new PersonModel("Josh", 20));
-            PersonCollection.Add(new PersonModel("Sebastian", 25));
-            PersonCollection.Add(new PersonModel("Alex", 50));
-
             ObjectPanelsCollection.Add(new CheckBoxesPanel());
+            ObjectPanelsCollection.Add(new TextsPanel());
+            ObjectPanelsCollection.Add(new TextBoxesPanel());
+            ObjectPanelsCollection.Add(new SlidersPanel());
+            ObjectPanelsCollection.Add(new ButtonsPanel());
+            ObjectPanelsCollection.Add(new ListsPanel());
 
             if (ObjectPanelsCollection.Count > 0)
             {
@@ -50,9 +51,7 @@ namespace OmegaDSD.ThemeWPF.ViewModels
         }
 
         private ThemeModel selectedTheme;
-        private ContentControl selectedObjectPanel;
-
-        public ObservableCollection<PersonModel> PersonCollection { get; } = new ObservableCollection<PersonModel>();
+        private ContentControl selectedObjectPanel;       
 
         public ThemeCollection ThemeCollection { get; } = new ThemeCollection();
 
