@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="OmegaDSD.ThemeWPF.Views.ObjectPanels.TextsPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Name="Texts"
+             d:DesignHeight="180"
+             d:DesignWidth="270"
+             mc:Ignorable="d">
+    <StackPanel VerticalAlignment="Stretch" Orientation="Vertical">
+        <TextBlock Margin="0,3,0,3" Text="Text Block" />
+        <TextBlock Margin="0,3,0,3"
+                   IsEnabled="False"
+                   Text="Disabled Text Block" />
+        <Label Content="Label" />
+        <Label Content="Disabled Label" IsEnabled="False" />
+        <TextBlock Margin="0,3,0,3">
+            <Hyperlink>HyperLink</Hyperlink>
+        </TextBlock>
+        <TextBlock Margin="0,3,0,3" IsEnabled="False">
+            <Hyperlink>Disabled HyperLink</Hyperlink>
+        </TextBlock>
+    </StackPanel>
+</UserControl>

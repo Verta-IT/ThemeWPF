@@ -59,6 +59,12 @@
     <Compile Include="Views\ObjectPanels\CheckBoxesPanel.xaml.cs">
       <DependentUpon>CheckBoxesPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ObjectPanels\TextBoxesPanel.xaml.cs">
+      <DependentUpon>TextBoxesPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ObjectPanels\TextsPanel.xaml.cs">
+      <DependentUpon>TextsPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ThemeManagerUserControl.xaml.cs">
       <DependentUpon>ThemeManagerUserControl.xaml</DependentUpon>
     </Compile>
@@ -96,6 +102,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\ObjectPanels\CheckBoxesPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ObjectPanels\TextBoxesPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ObjectPanels\TextsPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
