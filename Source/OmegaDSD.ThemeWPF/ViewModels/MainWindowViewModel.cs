@@ -31,11 +31,7 @@ namespace OmegaDSD.ThemeWPF.ViewModels
         {
             ObjectPanelsCollection.Add(new DemoPanel());
             ObjectPanelsCollection.Add(new BasicControlsPanel());
-            ObjectPanelsCollection.Add(new CheckBoxesPanel());
-            ObjectPanelsCollection.Add(new TextsPanel());
-            ObjectPanelsCollection.Add(new TextBoxesPanel());
             ObjectPanelsCollection.Add(new SlidersPanel());
-            ObjectPanelsCollection.Add(new ButtonsPanel());
             ObjectPanelsCollection.Add(new ListsPanel());
             ObjectPanelsCollection.Add(new ExpandersPanel());
             ObjectPanelsCollection.Add(new TabControlsPanel());
