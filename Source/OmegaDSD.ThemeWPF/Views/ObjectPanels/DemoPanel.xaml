@@ -1,12 +1,12 @@
 ﻿<UserControl x:Class="OmegaDSD.ThemeWPF.Views.ObjectPanels.DemoPanel"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:OmegaDSD.ThemeWPF.ViewModels"
              Name="Demo"
-             d:DesignHeight="450"
-             d:DesignWidth="800"
+             d:DesignHeight="632"
+             d:DesignWidth="1122"
              BorderBrush="{DynamicResource GroupBoxBorderBrush}"
              BorderThickness="1"
              mc:Ignorable="d">
@@ -110,9 +110,9 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <GroupBox Padding="-2,5,-2,5" Header="File Explorer">
+            <GroupBox Padding="-2,5,-2,5" Header="Group Box">
                 <TreeView BorderThickness="0">
-                    <TreeViewItem Header="Project" IsExpanded="True">
+                    <TreeViewItem Header="Tree View" IsExpanded="True">
                         <TreeViewItem Header="Images">
                             <TreeViewItem Header="Bird.png" />
                             <TreeViewItem Header="Car.png" />
@@ -135,104 +135,138 @@
             <TabControl Grid.Column="2" TabStripPlacement="Top">
                 <TabItem Header="Components.design">
                     <Canvas>
-                        <Button Canvas.Left="10"
-                                Canvas.Top="10"
+                        <Button Canvas.Left="506"
+                                Canvas.Top="49"
                                 Content="Button" />
-                        <Button Canvas.Left="69"
-                                Canvas.Top="10"
+                        <Button Canvas.Left="565"
+                                Canvas.Top="49"
                                 Content="Disabled Button"
                                 IsEnabled="False" />
-                        <ProgressBar Canvas.Left="220"
-                                     Canvas.Top="15"
+                        <RepeatButton Canvas.Left="506"
+                                      Canvas.Top="12"
+                                      Content="Repeat Button" />
+                        <ProgressBar Canvas.Left="163"
+                                     Canvas.Top="10"
                                      Width="250"
                                      Height="15"
                                      Maximum="100"
                                      Minimum="0"
                                      Value="50" />
                         <CheckBox Canvas.Left="10"
-                                  Canvas.Top="58"
+                                  Canvas.Top="10"
                                   Content="Check Box" />
                         <CheckBox Canvas.Left="10"
-                                  Canvas.Top="78"
+                                  Canvas.Top="30"
                                   Content="Disabled Check Box"
                                   IsEnabled="False" />
                         <StackPanel Canvas.Left="10"
-                                    Canvas.Top="120"
+                                    Canvas.Top="67"
                                     Width="112"
                                     Orientation="Vertical">
                             <RadioButton Content="Radio Button nr 1" IsChecked="True" />
                             <RadioButton Content="Radio Button nr 2" />
                             <RadioButton Content="Radio Button nr 3" />
                         </StackPanel>
-                        <Slider Canvas.Left="220"
-                                Canvas.Top="44"
+                        <Slider Canvas.Left="163"
+                                Canvas.Top="39"
                                 Width="250"
                                 Height="Auto"
                                 Orientation="Horizontal" />
-                        <Slider Canvas.Left="482"
-                                Canvas.Top="15"
+                        <Slider Canvas.Left="430"
+                                Canvas.Top="10"
                                 Width="Auto"
-                                Height="200"
+                                Height="192"
                                 Orientation="Vertical" />
-                        <Slider Canvas.Left="514"
-                                Canvas.Top="15"
+                        <Slider Canvas.Left="462"
+                                Canvas.Top="10"
                                 Width="Auto"
-                                Height="200"
+                                Height="192"
                                 Orientation="Vertical"
                                 TickFrequency="5"
                                 TickPlacement="BottomRight" />
-                        <Slider Canvas.Left="220"
-                                Canvas.Top="69"
+                        <Slider Canvas.Left="163"
+                                Canvas.Top="64"
                                 Width="250"
                                 Height="Auto"
                                 Orientation="Horizontal"
                                 TickFrequency="5"
                                 TickPlacement="TopLeft" />
-                        <TextBlock Canvas.Left="10" Canvas.Top="191">
+                        <TextBlock Canvas.Left="10" Canvas.Top="146">
                             <Hyperlink>Hyperlink</Hyperlink>
                         </TextBlock>
                         <TextBlock Canvas.Left="10"
-                                   Canvas.Top="212"
+                                   Canvas.Top="167"
                                    IsEnabled="False">
                             <Hyperlink>Disabled Hyperlink</Hyperlink>
                         </TextBlock>
-                        <ComboBox Canvas.Left="220"
-                                  Canvas.Top="119"
+                        <ComboBox Canvas.Left="163"
+                                  Canvas.Top="114"
                                   Width="120"
                                   DisplayMemberPath="Name"
                                   ItemsSource="{Binding PersonCollection}"
                                   SelectedIndex="0" />
-                        <ComboBox Canvas.Left="350"
-                                  Canvas.Top="119"
+                        <ComboBox Canvas.Left="293"
+                                  Canvas.Top="114"
                                   Width="120"
                                   DisplayMemberPath="Name"
                                   IsEnabled="False"
                                   ItemsSource="{Binding PersonCollection}"
                                   SelectedIndex="0" />
-                        <ComboBox Canvas.Left="220"
-                                  Canvas.Top="146"
+                        <ComboBox Canvas.Left="163"
+                                  Canvas.Top="141"
                                   Width="120"
                                   DisplayMemberPath="Name"
                                   IsEditable="True"
                                   ItemsSource="{Binding PersonCollection}"
                                   SelectedIndex="0" />
-                        <ComboBox Canvas.Left="350"
-                                  Canvas.Top="146"
+                        <ComboBox Canvas.Left="293"
+                                  Canvas.Top="141"
                                   Width="120"
                                   DisplayMemberPath="Name"
                                   IsEditable="True"
                                   IsEnabled="False"
                                   ItemsSource="{Binding PersonCollection}"
                                   SelectedIndex="0" />
-                        <TextBox Canvas.Left="220"
-                                 Canvas.Top="187"
+                        <TextBox Canvas.Left="163"
+                                 Canvas.Top="182"
                                  Width="120"
                                  Text="Text Box" />
-                        <TextBox Canvas.Left="350"
-                                 Canvas.Top="187"
+                        <TextBox Canvas.Left="293"
+                                 Canvas.Top="182"
                                  Width="120"
                                  IsEnabled="False"
                                  Text="Disabled Text Box" />
+                        <RepeatButton Canvas.Left="605"
+                                      Canvas.Top="12"
+                                      Content="Disabled Repeat Button"
+                                      IsEnabled="False" />
+                        <RichTextBox Canvas.Left="506"
+                                     Canvas.Top="86"
+                                     Width="242"
+                                     Height="61"
+                                     VerticalScrollBarVisibility="Auto">
+                            <FlowDocument>
+                                <Paragraph>
+                                    Rich Text Box
+                                </Paragraph>
+                            </FlowDocument>
+                        </RichTextBox>
+                        <DataGrid Height="129"
+                                  AutoGenerateColumns="False"
+                                  CanUserAddRows="True"
+                                  ItemsSource="{Binding PersonCollection}" Canvas.Left="10" Canvas.Top="220" Width="403">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
+                                <DataGridTextColumn Binding="{Binding Age}" Header="Value" />
+                                <DataGridTemplateColumn Header="Active" IsReadOnly="True">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox HorizontalAlignment="Center" IsChecked="{Binding IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </Canvas>
                 </TabItem>
                 <TabItem Header="JsonFile.json" />
