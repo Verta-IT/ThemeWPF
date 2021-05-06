@@ -1,0 +1,246 @@
+﻿<UserControl x:Class="OmegaDSD.ThemeWPF.Views.ObjectPanels.DemoPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:OmegaDSD.ThemeWPF.ViewModels"
+             Name="Demo"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             BorderBrush="{DynamicResource GroupBoxBorderBrush}"
+             BorderThickness="1"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <vm:ListsViewModel />
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <BitmapImage x:Key="Info16" UriSource="..\..\Images\Information16.png" />
+        <BitmapImage x:Key="Save16" UriSource="..\..\Images\Diskette16.png" />
+        <BitmapImage x:Key="SaveAs16" UriSource="..\..\Images\SaveAs16.png" />
+        <BitmapImage x:Key="Folder16" UriSource="..\..\Images\Folder16.png" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Margin="5,5,0,0">
+            <MenuItem Header="File">
+                <MenuItem Header="Save">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource Save16}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Save as...">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource SaveAs16}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Open">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource Folder16}" />
+                    </MenuItem.Icon>
+                    <MenuItem Header="File" />
+                    <MenuItem Header="Application" />
+                    <MenuItem Header="Other" />
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Exit" />
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Cut" />
+                <MenuItem Header="Copy" />
+                <MenuItem Header="Paste" />
+                <MenuItem Header="Delete" />
+            </MenuItem>
+            <MenuItem Header="View">
+                <MenuItem Header="Properties Window" />
+            </MenuItem>
+            <MenuItem Header="Tools">
+                <MenuItem Header="Active Automatization"
+                          IsCheckable="True"
+                          IsChecked="True" />
+                <MenuItem Header="Active Manager"
+                          IsCheckable="True"
+                          IsChecked="True" />
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource Info16}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray Grid.Row="1" Margin="5,5,0,0">
+            <ToolBar BandIndex="0">
+                <MenuItem>
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource Save16}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem>
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource SaveAs16}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem>
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource Info16}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </ToolBar>
+            <ToolBar BandIndex="1">
+                <Button Content="Start" />
+                <Button Content="Stop" />
+                <Button Content="Abort" />
+                <Button Content="Disabled" IsEnabled="False" />
+            </ToolBar>
+            <ToolBar BandIndex="2">
+                <CheckBox Content="Active CheckBox" IsChecked="True" />
+                <CheckBox Content="CheckBox" />
+            </ToolBar>
+        </ToolBarTray>
+        <Grid Grid.Row="2" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <GroupBox Padding="-2,5,-2,5" Header="File Explorer">
+                <TreeView BorderThickness="0">
+                    <TreeViewItem Header="Project" IsExpanded="True">
+                        <TreeViewItem Header="Images">
+                            <TreeViewItem Header="Bird.png" />
+                            <TreeViewItem Header="Car.png" />
+                            <TreeViewItem Header="Mouse.png" />
+                        </TreeViewItem>
+                        <TreeViewItem Header="Documents">
+                            <TreeViewItem Header="PersonalInformation.txt" />
+                            <TreeViewItem Header="CompanyInformation.txt" />
+                        </TreeViewItem>
+                        <TreeViewItem Header="Settings.xml" />
+                        <TreeViewItem Header="Tools.xml" />
+                        <TreeViewItem Header="Tmp.xml" />
+                    </TreeViewItem>
+                </TreeView>
+            </GroupBox>
+            <GridSplitter Grid.Column="1"
+                          Width="5"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch" />
+            <TabControl Grid.Column="2" TabStripPlacement="Top">
+                <TabItem Header="Components.design">
+                    <Canvas>
+                        <Button Canvas.Left="10"
+                                Canvas.Top="10"
+                                Content="Button" />
+                        <Button Canvas.Left="69"
+                                Canvas.Top="10"
+                                Content="Disabled Button"
+                                IsEnabled="False" />
+                        <ProgressBar Canvas.Left="220"
+                                     Canvas.Top="15"
+                                     Width="250"
+                                     Height="15"
+                                     Maximum="100"
+                                     Minimum="0"
+                                     Value="50" />
+                        <CheckBox Canvas.Left="10"
+                                  Canvas.Top="58"
+                                  Content="Check Box" />
+                        <CheckBox Canvas.Left="10"
+                                  Canvas.Top="78"
+                                  Content="Disabled Check Box"
+                                  IsEnabled="False" />
+                        <StackPanel Canvas.Left="10"
+                                    Canvas.Top="120"
+                                    Width="112"
+                                    Orientation="Vertical">
+                            <RadioButton Content="Radio Button nr 1" IsChecked="True" />
+                            <RadioButton Content="Radio Button nr 2" />
+                            <RadioButton Content="Radio Button nr 3" />
+                        </StackPanel>
+                        <Slider Canvas.Left="220"
+                                Canvas.Top="44"
+                                Width="250"
+                                Height="Auto"
+                                Orientation="Horizontal" />
+                        <Slider Canvas.Left="482"
+                                Canvas.Top="15"
+                                Width="Auto"
+                                Height="200"
+                                Orientation="Vertical" />
+                        <Slider Canvas.Left="514"
+                                Canvas.Top="15"
+                                Width="Auto"
+                                Height="200"
+                                Orientation="Vertical"
+                                TickFrequency="5"
+                                TickPlacement="BottomRight" />
+                        <Slider Canvas.Left="220"
+                                Canvas.Top="69"
+                                Width="250"
+                                Height="Auto"
+                                Orientation="Horizontal"
+                                TickFrequency="5"
+                                TickPlacement="TopLeft" />
+                        <TextBlock Canvas.Left="10" Canvas.Top="191">
+                            <Hyperlink>Hyperlink</Hyperlink>
+                        </TextBlock>
+                        <TextBlock Canvas.Left="10"
+                                   Canvas.Top="212"
+                                   IsEnabled="False">
+                            <Hyperlink>Disabled Hyperlink</Hyperlink>
+                        </TextBlock>
+                        <ComboBox Canvas.Left="220"
+                                  Canvas.Top="119"
+                                  Width="120"
+                                  DisplayMemberPath="Name"
+                                  ItemsSource="{Binding PersonCollection}"
+                                  SelectedIndex="0" />
+                        <ComboBox Canvas.Left="350"
+                                  Canvas.Top="119"
+                                  Width="120"
+                                  DisplayMemberPath="Name"
+                                  IsEnabled="False"
+                                  ItemsSource="{Binding PersonCollection}"
+                                  SelectedIndex="0" />
+                        <ComboBox Canvas.Left="220"
+                                  Canvas.Top="146"
+                                  Width="120"
+                                  DisplayMemberPath="Name"
+                                  IsEditable="True"
+                                  ItemsSource="{Binding PersonCollection}"
+                                  SelectedIndex="0" />
+                        <ComboBox Canvas.Left="350"
+                                  Canvas.Top="146"
+                                  Width="120"
+                                  DisplayMemberPath="Name"
+                                  IsEditable="True"
+                                  IsEnabled="False"
+                                  ItemsSource="{Binding PersonCollection}"
+                                  SelectedIndex="0" />
+                        <TextBox Canvas.Left="220"
+                                 Canvas.Top="187"
+                                 Width="120"
+                                 Text="Text Box" />
+                        <TextBox Canvas.Left="350"
+                                 Canvas.Top="187"
+                                 Width="120"
+                                 IsEnabled="False"
+                                 Text="Disabled Text Box" />
+                    </Canvas>
+                </TabItem>
+                <TabItem Header="JsonFile.json" />
+                <TabItem Header="XmlFile.xml" />
+            </TabControl>
+        </Grid>
+        <StatusBar Grid.Row="3">
+            <StatusBarItem Content="TxtFile.txt" />
+        </StatusBar>
+    </Grid>
+</UserControl>

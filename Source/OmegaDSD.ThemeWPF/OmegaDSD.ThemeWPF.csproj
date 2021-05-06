@@ -66,6 +66,9 @@
     <Compile Include="Views\ObjectPanels\CheckBoxesPanel.xaml.cs">
       <DependentUpon>CheckBoxesPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ObjectPanels\DemoPanel.xaml.cs">
+      <DependentUpon>DemoPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ObjectPanels\ExpandersPanel.xaml.cs">
       <DependentUpon>ExpandersPanel.xaml</DependentUpon>
     </Compile>
@@ -138,6 +141,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ObjectPanels\DemoPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ObjectPanels\ExpandersPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -205,6 +212,18 @@
     <Resource Include="Images\Magnifier16.png" />
     <Resource Include="Images\Port16.png" />
     <Resource Include="Images\Processor16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Diskette16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\SaveAs16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Folder16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Information16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
