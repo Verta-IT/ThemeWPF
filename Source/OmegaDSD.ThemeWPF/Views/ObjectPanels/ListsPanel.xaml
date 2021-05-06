@@ -16,11 +16,12 @@
         <ListBox Margin="10,5,0,0" Height="90" ItemsSource="{Binding PersonCollection}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock>
+                    <TextBlock IsEnabled="{Binding IsActive, Mode=OneWay}">
                         <TextBlock.Text>
-                            <MultiBinding StringFormat="{}{0} ({1})">
+                            <MultiBinding StringFormat="{}Name: {0}, Age: {1}, IsActive: {2}">
                                 <Binding Mode="OneWay" Path="Name" />
                                 <Binding Mode="OneWay" Path="Age" />
+                                <Binding Mode="OneWay" Path="IsActive" />
                             </MultiBinding>
                         </TextBlock.Text>
                     </TextBlock>
@@ -39,6 +40,9 @@
                     <GridViewColumn Width="Auto"
                                     DisplayMemberBinding="{Binding Age}"
                                     Header="Second" />
+                    <GridViewColumn Width="Auto"
+                                    DisplayMemberBinding="{Binding IsActive}"
+                                    Header="IsActive" />
                 </GridView>
             </ListView.View>
         </ListView>
@@ -51,10 +55,10 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
                 <DataGridTextColumn Binding="{Binding Age}" Header="Value" />
-                <DataGridTemplateColumn Header="Active">
+                <DataGridTemplateColumn Header="Active" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <CheckBox HorizontalAlignment="Center" />
+                            <CheckBox HorizontalAlignment="Center" IsChecked="{Binding IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
