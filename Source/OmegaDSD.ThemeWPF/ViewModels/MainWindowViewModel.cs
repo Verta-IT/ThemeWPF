@@ -1,7 +1,12 @@
 ﻿using OmegaDSD.ThemeWPF.Models;
 using OmegaDSD.ThemeWPF.Themes;
+using OmegaDSD.ThemeWPF.Views.ObjectPanels;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Windows.Controls;
 
 namespace OmegaDSD.ThemeWPF.ViewModels
 {
@@ -27,13 +32,29 @@ namespace OmegaDSD.ThemeWPF.ViewModels
             PersonCollection.Add(new PersonModel("Josh", 20));
             PersonCollection.Add(new PersonModel("Sebastian", 25));
             PersonCollection.Add(new PersonModel("Alex", 50));
+
+            ObjectPanelsCollection.Add(new CheckBoxesPanel());
+
+            if (ObjectPanelsCollection.Count > 0)
+            {
+                SelectedObjectPanel = ObjectPanelsCollection[0];
+            }
+
+            foreach (ThemeModel themeModel in ThemeCollection)
+            {
+                if (themeModel.Theme == ThemeManager.CurrentTheme)
+                {
+                    selectedTheme = themeModel;
+                }
+            }
         }
+
+        private ThemeModel selectedTheme;
+        private ContentControl selectedObjectPanel;
 
         public ObservableCollection<PersonModel> PersonCollection { get; } = new ObservableCollection<PersonModel>();
 
         public ThemeCollection ThemeCollection { get; } = new ThemeCollection();
-
-        private ThemeModel selectedTheme;
 
         public ThemeModel SelectedTheme
         {
@@ -54,6 +75,14 @@ namespace OmegaDSD.ThemeWPF.ViewModels
                     RaisePropertyChanged(ref selectedTheme, value);
                 }                
             }
+        }
+
+        public ObservableCollection<ContentControl> ObjectPanelsCollection { get; } = new ObservableCollection<ContentControl>();        
+
+        public ContentControl SelectedObjectPanel
+        {
+            get => selectedObjectPanel;
+            set => RaisePropertyChanged(ref selectedObjectPanel, value);
         }
     }
 }

@@ -23,5 +23,8 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <views:ThemeManagerUserControl Grid.Column="0"/>
+        <GroupBox Grid.Column="1" Margin="5" Header="{Binding SelectedObjectPanel.Name, Mode=TwoWay}">
+            <ContentControl Content="{Binding SelectedObjectPanel, Mode=OneWay}"/>
+        </GroupBox>
     </Grid>
 </Window>

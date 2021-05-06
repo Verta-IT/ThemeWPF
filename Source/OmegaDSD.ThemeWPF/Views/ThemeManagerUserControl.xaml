@@ -12,7 +12,7 @@
         <ResourceDictionary Source="../Themes/LightTheme.xaml" />
     </UserControl.Resources>
     <d:UserControl.DataContext>
-        <vm:MainWindowViewModel/>
+        <vm:MainWindowViewModel />
     </d:UserControl.DataContext>
     <Border Background="{StaticResource WindowBackground}">
         <Grid Margin="5">
@@ -20,12 +20,21 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <GroupBox Grid.Row="0" Header="Select theme">
-                <ListBox BorderThickness="0" ItemsSource="{Binding ThemeCollection}" SelectedItem="{Binding SelectedTheme, Mode=TwoWay}"/>
+            <GroupBox Grid.Row="0"
+                      Padding="0"
+                      Header="Select theme">
+                <ListBox BorderThickness="0"
+                         ItemsSource="{Binding ThemeCollection}"
+                         SelectedItem="{Binding SelectedTheme, Mode=TwoWay}" />
             </GroupBox>
             <GroupBox Grid.Row="1"
                       Margin="0,5,0,0"
+                      Padding="0"
                       Header="Controls">
+                <ListBox BorderThickness="0"
+                         DisplayMemberPath="Name"
+                         ItemsSource="{Binding ObjectPanelsCollection}"
+                         SelectedItem="{Binding SelectedObjectPanel}" />
             </GroupBox>
         </Grid>
     </Border>
