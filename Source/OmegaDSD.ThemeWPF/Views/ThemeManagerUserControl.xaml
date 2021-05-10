@@ -3,13 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:views="clr-namespace:OmegaDSD.ThemeWPF.Views"
              xmlns:vm="clr-namespace:OmegaDSD.ThemeWPF.ViewModels"
              d:DesignHeight="300"
              d:DesignWidth="250"
              mc:Ignorable="d">
     <UserControl.Resources>
-        <ResourceDictionary Source="../Themes/LightTheme.xaml" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/LightTheme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <ObjectDataProvider x:Key="TextFormattingModeEnumDataProvider"
+                                MethodName="GetValues"
+                                ObjectType="{x:Type sys:Enum}">
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type TypeName="TextFormattingMode" />
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
+        </ResourceDictionary>
     </UserControl.Resources>
     <d:UserControl.DataContext>
         <vm:MainWindowViewModel />
@@ -18,16 +31,30 @@
         <Grid Margin="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <GroupBox Grid.Row="0"
+            <StackPanel Orientation="Vertical">
+                <Grid Height="22">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock VerticalAlignment="Center" Text="Display Mode" Grid.Column="0" />
+                    <ComboBox Margin="5,0,0,0" Grid.Column="1" ItemsSource="{Binding Source={StaticResource TextFormattingModeEnumDataProvider}}" SelectedItem="{Binding TextFormattingMode, Mode=TwoWay}" />
+                </Grid>
+                <CheckBox Margin="0,5,0,5"
+                          Content="Use Layout Rounding"
+                          IsChecked="{Binding UseLayoutRounding, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}" />
+            </StackPanel>
+            <GroupBox Grid.Row="1"
                       Padding="0"
                       Header="Select theme">
                 <ListBox BorderThickness="0"
                          ItemsSource="{Binding ThemeCollection}"
                          SelectedItem="{Binding SelectedTheme, Mode=TwoWay}" />
             </GroupBox>
-            <GroupBox Grid.Row="1"
+            <GroupBox Grid.Row="2"
                       Margin="0,5,0,0"
                       Padding="0"
                       Header="Controls">

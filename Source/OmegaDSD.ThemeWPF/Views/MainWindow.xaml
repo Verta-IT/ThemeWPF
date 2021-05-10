@@ -6,6 +6,8 @@
         xmlns:vm="clr-namespace:OmegaDSD.ThemeWPF.ViewModels"
         xmlns:views="clr-namespace:OmegaDSD.ThemeWPF.Views"
         Title="MainWindow"
+        UseLayoutRounding="True"
+        TextOptions.TextFormattingMode="{Binding TextFormattingMode, Mode=OneWay}"
         Width="1400"
         Height="650"
         WindowStartupLocation="CenterScreen"
@@ -15,7 +17,7 @@
     </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="200" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <views:ThemeManagerUserControl Grid.Column="0" />
