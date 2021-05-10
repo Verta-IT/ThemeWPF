@@ -6,8 +6,9 @@
         xmlns:vm="clr-namespace:OmegaDSD.ThemeWPF.ViewModels"
         xmlns:views="clr-namespace:OmegaDSD.ThemeWPF.Views"
         Title="MainWindow"
-        Width="800"
-        Height="450"
+        Width="1400"
+        Height="650"
+        WindowStartupLocation="CenterScreen"
         mc:Ignorable="d">
     <Window.DataContext>
         <vm:MainWindowViewModel />
