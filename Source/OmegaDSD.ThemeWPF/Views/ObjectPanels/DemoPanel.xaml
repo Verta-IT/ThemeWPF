@@ -5,8 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:OmegaDSD.ThemeWPF.ViewModels"
              Name="Demo"
-             d:DesignHeight="632"
-             d:DesignWidth="1122"
+             d:DesignHeight="640"
+             d:DesignWidth="1150"
              BorderBrush="{DynamicResource GroupBoxBorderBrush}"
              BorderThickness="1"
              mc:Ignorable="d">
@@ -133,128 +133,139 @@
                           HorizontalAlignment="Stretch"
                           VerticalAlignment="Stretch" />
             <TabControl Grid.Column="2" TabStripPlacement="Top">
-                <TabItem Header="Components.design">
-                    <Canvas>
-                        <Button Canvas.Left="506"
-                                Canvas.Top="49"
-                                Content="Button" />
-                        <Button Canvas.Left="565"
-                                Canvas.Top="49"
-                                Content="Disabled Button"
-                                IsEnabled="False" />
-                        <RepeatButton Canvas.Left="506"
-                                      Canvas.Top="12"
-                                      Content="Repeat Button" />
-                        <ProgressBar Canvas.Left="163"
-                                     Canvas.Top="10"
-                                     Width="250"
-                                     Height="15"
-                                     Maximum="100"
-                                     Minimum="0"
-                                     Value="50" />
-                        <CheckBox Canvas.Left="10"
-                                  Canvas.Top="10"
-                                  Content="Check Box" />
-                        <CheckBox Canvas.Left="10"
-                                  Canvas.Top="30"
+                <TabItem Header="Components">
+                    <Grid>
+                        <CheckBox Margin="10,10,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
+                                  Content="CheckBox" />
+                        <CheckBox Margin="10,50,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
                                   Content="Disabled Check Box"
                                   IsEnabled="False" />
-                        <StackPanel Canvas.Left="10"
-                                    Canvas.Top="67"
-                                    Width="112"
-                                    Orientation="Vertical">
-                            <RadioButton Content="Radio Button nr 1" IsChecked="True" />
-                            <RadioButton Content="Radio Button nr 2" />
-                            <RadioButton Content="Radio Button nr 3" />
-                        </StackPanel>
-                        <Slider Canvas.Left="163"
-                                Canvas.Top="39"
-                                Width="250"
-                                Height="Auto"
-                                Orientation="Horizontal" />
-                        <Slider Canvas.Left="430"
-                                Canvas.Top="10"
-                                Width="Auto"
-                                Height="192"
-                                Orientation="Vertical" />
-                        <Slider Canvas.Left="462"
-                                Canvas.Top="10"
-                                Width="Auto"
-                                Height="192"
-                                Orientation="Vertical"
-                                TickFrequency="5"
-                                TickPlacement="BottomRight" />
-                        <Slider Canvas.Left="163"
-                                Canvas.Top="64"
-                                Width="250"
-                                Height="Auto"
-                                Orientation="Horizontal"
-                                TickFrequency="5"
-                                TickPlacement="TopLeft" />
-                        <TextBlock Canvas.Left="10" Canvas.Top="146">
+                        <CheckBox Margin="10,30,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
+                                  IsChecked="True"
+                                  Content="CheckBox" />
+                        <CheckBox Margin="10,70,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
+                                  IsChecked="True"
+                                  Content="Disabled Check Box"
+                                  IsEnabled="False" />
+                        <RadioButton Margin="10,117,0,0"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Top"
+                                     Content="Radio Button nr 1"
+                                     IsChecked="True" />
+                        <RadioButton Margin="10,167,0,0"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Top"
+                                     Content="Radio Button nr 2" />
+                        <RadioButton Margin="10,142,0,0"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Top"
+                                     Content="Radio Button nr 3" />
+                        <TextBlock Margin="531,92,0,0"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Top">
                             <Hyperlink>Hyperlink</Hyperlink>
                         </TextBlock>
-                        <TextBlock Canvas.Left="10"
-                                   Canvas.Top="167"
+                        <TextBlock Margin="630,92,0,0"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Top"
                                    IsEnabled="False">
                             <Hyperlink>Disabled Hyperlink</Hyperlink>
                         </TextBlock>
-                        <ComboBox Canvas.Left="163"
-                                  Canvas.Top="114"
-                                  Width="120"
+                        <ProgressBar Width="250"
+                                     Height="15"
+                                     Margin="185,15,0,0"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Top"
+                                     Maximum="100"
+                                     Minimum="0"
+                                     Value="50" />
+                        <Slider Width="Auto"
+                                Height="192"
+                                Margin="493,15,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Orientation="Vertical" />
+                        <Slider Width="Auto"
+                                Height="192"
+                                Margin="451,15,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Orientation="Vertical"
+                                TickFrequency="5"
+                                TickPlacement="BottomRight" />
+                        <Slider Width="250"
+                                Height="Auto"
+                                Margin="185,71,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Orientation="Horizontal"
+                                TickFrequency="5"
+                                TickPlacement="TopLeft" />
+                        <Slider Width="250"
+                                Height="Auto"
+                                Margin="185,109,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Orientation="Horizontal" />
+                        <ComboBox Width="120"
+                                  Margin="185,175,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
                                   DisplayMemberPath="Name"
                                   ItemsSource="{Binding PersonCollection}"
                                   SelectedIndex="0" />
-                        <ComboBox Canvas.Left="293"
-                                  Canvas.Top="114"
-                                  Width="120"
+                        <ComboBox Width="120"
+                                  Margin="315,175,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
                                   DisplayMemberPath="Name"
                                   IsEnabled="False"
                                   ItemsSource="{Binding PersonCollection}"
                                   SelectedIndex="0" />
-                        <ComboBox Canvas.Left="163"
-                                  Canvas.Top="141"
-                                  Width="120"
+                        <ComboBox Width="120"
+                                  Margin="185,141,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
                                   DisplayMemberPath="Name"
                                   IsEditable="True"
                                   ItemsSource="{Binding PersonCollection}"
                                   SelectedIndex="0" />
-                        <ComboBox Canvas.Left="293"
-                                  Canvas.Top="141"
-                                  Width="120"
+                        <ComboBox Width="120"
+                                  Margin="315,141,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
                                   DisplayMemberPath="Name"
                                   IsEditable="True"
                                   IsEnabled="False"
                                   ItemsSource="{Binding PersonCollection}"
                                   SelectedIndex="0" />
-                        <TextBox Canvas.Left="163"
-                                 Canvas.Top="182"
-                                 Width="120"
+                        <TextBox Width="120"
+                                 Margin="185,211,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
                                  Text="Text Box" />
-                        <TextBox Canvas.Left="293"
-                                 Canvas.Top="182"
-                                 Width="120"
+                        <TextBox Width="120"
+                                 Margin="315,211,0,0"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top"
                                  IsEnabled="False"
                                  Text="Disabled Text Box" />
-                        <RepeatButton Canvas.Left="605"
-                                      Canvas.Top="12"
-                                      Content="Disabled Repeat Button"
-                                      IsEnabled="False" />
-                        <RichTextBox Canvas.Left="506"
-                                     Canvas.Top="86"
-                                     Width="242"
-                                     Height="61"
-                                     VerticalScrollBarVisibility="Auto">
-                            <FlowDocument>
-                                <Paragraph>
-                                    Rich Text Box
-                                </Paragraph>
-                            </FlowDocument>
-                        </RichTextBox>
-                        <DataGrid Height="129"
+                        <DataGrid Width="425"
+                                  Height="129"
+                                  Margin="10,246,0,0"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Top"
                                   AutoGenerateColumns="False"
                                   CanUserAddRows="True"
-                                  ItemsSource="{Binding PersonCollection}" Canvas.Left="10" Canvas.Top="220" Width="403">
+                                  ItemsSource="{Binding PersonCollection}">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
                                 <DataGridTextColumn Binding="{Binding Age}" Header="Value" />
@@ -267,10 +278,51 @@
                                 </DataGridTemplateColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                    </Canvas>
+                        <Button Width="94"
+                                Margin="531,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Button" />
+                        <Button Width="143"
+                                Margin="630,10,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Content="Disabled Button"
+                                IsEnabled="False" />
+                        <RepeatButton Margin="531,47,0,0"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top"
+                                      Content="Repeat Button" />
+                        <RepeatButton Margin="630,47,0,0"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top"
+                                      Content="Disabled Repeat Button"
+                                      IsEnabled="False" />
+                        <RichTextBox Width="242"
+                                     Height="61"
+                                     Margin="531,146,0,0"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Top"
+                                     VerticalScrollBarVisibility="Auto">
+                            <FlowDocument>
+                                <Paragraph>
+                                    Rich Text Box
+                                </Paragraph>
+                            </FlowDocument>
+                        </RichTextBox>
+                        <ProgressBar Width="250"
+                            Height="15"
+                                     IsEnabled="False"
+                            Margin="185,40,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Maximum="100"
+                            Minimum="0"
+                            Value="50" />
+                    </Grid>
                 </TabItem>
-                <TabItem Header="JsonFile.json" />
                 <TabItem Header="XmlFile.xml" />
+                <TabItem Header="JsonFile.json" />
             </TabControl>
         </Grid>
         <StatusBar Grid.Row="3">
