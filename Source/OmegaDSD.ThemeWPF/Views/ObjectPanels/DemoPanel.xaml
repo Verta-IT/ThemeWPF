@@ -106,7 +106,7 @@
         </ToolBarTray>
         <Grid Grid.Row="2" Margin="5">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.4*" />
+                <ColumnDefinition Width="0.3*" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
@@ -147,13 +147,13 @@
                         <CheckBox Margin="10,30,0,0"
                                   HorizontalAlignment="Left"
                                   VerticalAlignment="Top"
-                                  IsChecked="True"
-                                  Content="CheckBox" />
+                                  Content="CheckBox"
+                                  IsChecked="True" />
                         <CheckBox Margin="10,70,0,0"
                                   HorizontalAlignment="Left"
                                   VerticalAlignment="Top"
-                                  IsChecked="True"
                                   Content="Disabled Check Box"
+                                  IsChecked="True"
                                   IsEnabled="False" />
                         <RadioButton Margin="10,117,0,0"
                                      HorizontalAlignment="Left"
@@ -168,17 +168,15 @@
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
                                      Content="Radio Button nr 3" />
-                        <TextBlock Margin="531,92,0,0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top">
-                            <Hyperlink>Hyperlink</Hyperlink>
-                        </TextBlock>
-                        <TextBlock Margin="630,92,0,0"
+                        <TextBlock Margin="531,133,0,0"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
-                                   IsEnabled="False">
-                            <Hyperlink>Disabled Hyperlink</Hyperlink>
-                        </TextBlock>
+                                   Text="Text Block" />
+                        <TextBlock Margin="630,133,0,0"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Top"
+                                   IsEnabled="False"
+                                   Text="Disabled Text Block" />
                         <ProgressBar Width="250"
                                      Height="15"
                                      Margin="185,15,0,0"
@@ -188,13 +186,13 @@
                                      Minimum="0"
                                      Value="50" />
                         <Slider Width="Auto"
-                                Height="192"
+                                Height="216"
                                 Margin="493,15,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
                                 Orientation="Vertical" />
                         <Slider Width="Auto"
-                                Height="192"
+                                Height="216"
                                 Margin="451,15,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
@@ -298,27 +296,60 @@
                                       VerticalAlignment="Top"
                                       Content="Disabled Repeat Button"
                                       IsEnabled="False" />
-                        <RichTextBox Width="242"
-                                     Height="61"
-                                     Margin="531,146,0,0"
+                        <RichTextBox Width="322"
+                                     Height="129"
+                                     Margin="451,246,0,0"
                                      HorizontalAlignment="Left"
                                      VerticalAlignment="Top"
                                      VerticalScrollBarVisibility="Auto">
                             <FlowDocument>
+                                <Paragraph FontWeight="DemiBold" TextAlignment="Center">
+                                    Editable Rich Text Box
+                                </Paragraph>
                                 <Paragraph>
-                                    Rich Text Box
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                    Duis sodales condimentum odio et suscipit. Sed leo quam, accumsan sit amet elit gravida, mollis volutpat tellus. 
+                                    Proin vestibulum hendrerit fermentum. Phasellus eget elit hendrerit, dictum odio imperdiet, rhoncus enim. 
+                                    Suspendisse mattis, augue eleifend aliquam cursus, urna risus semper sem, non molestie ligula augue id arcu. 
+                                    Duis placerat vehicula neque, vel fringilla est pulvinar vel. 
+                                    Maecenas ultricies eros sed nibh mollis, vel pharetra odio congue. 
+                                    Nullam in neque arcu. Donec fringilla magna nec justo condimentum, in sagittis urna lacinia.
                                 </Paragraph>
                             </FlowDocument>
                         </RichTextBox>
                         <ProgressBar Width="250"
-                            Height="15"
+                                     Height="15"
+                                     Margin="185,40,0,0"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Top"
                                      IsEnabled="False"
-                            Margin="185,40,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            Maximum="100"
-                            Minimum="0"
-                            Value="50" />
+                                     Maximum="100"
+                                     Minimum="0"
+                                     Value="50" />
+                        <TextBlock Margin="531,167,0,0"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Top">
+                            <Hyperlink>
+                                <Run Text="Hyperlink" />
+                            </Hyperlink>
+                        </TextBlock>
+                        <TextBlock Margin="630,167,0,0"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Top"
+                                   IsEnabled="False">
+                            <Hyperlink>
+                                <Run Text="Disabled Hyperlink" />
+                            </Hyperlink>
+                        </TextBlock>
+                        <Label Margin="531,91,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Label" />
+                        <Label Margin="630,91,0,0"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Content="Disabled Label"
+                               IsEnabled="False" />
                     </Grid>
                 </TabItem>
                 <TabItem Header="XmlFile.xml" />
