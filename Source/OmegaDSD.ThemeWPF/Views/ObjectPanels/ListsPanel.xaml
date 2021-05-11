@@ -12,8 +12,12 @@
         <vm:ListsViewModel />
     </UserControl.DataContext>
     <StackPanel>
-        <TextBlock Margin="0,5,0,0" Text="List Box" />
-        <ListBox Margin="10,5,0,0" Height="90" ItemsSource="{Binding PersonCollection}">
+        <TextBlock Margin="0,5,0,0"
+                   Style="{DynamicResource TextBlockStyle}"
+                   Text="List Box" />
+        <ListBox Height="90"
+                 Margin="10,5,0,0"
+                 ItemsSource="{Binding PersonCollection}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock IsEnabled="{Binding IsActive, Mode=OneWay}">
@@ -28,8 +32,11 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBlock Margin="0,5,0,0" Text="List View" />
-        <ListView Margin="10,5,0,0" Height="120"
+        <TextBlock Margin="0,5,0,0"
+                   Style="{DynamicResource TextBlockStyle}"
+                   Text="List View" />
+        <ListView Height="120"
+                  Margin="10,5,0,0"
                   HorizontalContentAlignment="Stretch"
                   ItemsSource="{Binding PersonCollection}">
             <ListView.View>
@@ -46,9 +53,11 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBlock Margin="0,5,0,0" Text="Data Grid" />
-        <DataGrid Margin="10,5,0,0"
-                  Height="125"
+        <TextBlock Margin="0,5,0,0"
+                   Style="{DynamicResource TextBlockStyle}"
+                   Text="Data Grid" />
+        <DataGrid Height="125"
+                  Margin="10,5,0,0"
                   AutoGenerateColumns="False"
                   CanUserAddRows="True"
                   ItemsSource="{Binding PersonCollection}">
@@ -58,7 +67,7 @@
                 <DataGridTemplateColumn Header="Active" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <CheckBox HorizontalAlignment="Center" IsChecked="{Binding IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox HorizontalAlignment="Center" IsChecked="{Binding IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

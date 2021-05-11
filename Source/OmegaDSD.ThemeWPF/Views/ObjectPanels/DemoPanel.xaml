@@ -171,11 +171,13 @@
                         <TextBlock Margin="531,133,0,0"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
+                                   Style="{DynamicResource TextBlockStyle}"
                                    Text="Text Block" />
                         <TextBlock Margin="630,133,0,0"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
                                    IsEnabled="False"
+                                   Style="{DynamicResource TextBlockStyle}"
                                    Text="Disabled Text Block" />
                         <ProgressBar Width="250"
                                      Height="15"
@@ -307,12 +309,12 @@
                                     Editable Rich Text Box
                                 </Paragraph>
                                 <Paragraph>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                    Duis sodales condimentum odio et suscipit. Sed leo quam, accumsan sit amet elit gravida, mollis volutpat tellus. 
-                                    Proin vestibulum hendrerit fermentum. Phasellus eget elit hendrerit, dictum odio imperdiet, rhoncus enim. 
-                                    Suspendisse mattis, augue eleifend aliquam cursus, urna risus semper sem, non molestie ligula augue id arcu. 
-                                    Duis placerat vehicula neque, vel fringilla est pulvinar vel. 
-                                    Maecenas ultricies eros sed nibh mollis, vel pharetra odio congue. 
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Duis sodales condimentum odio et suscipit. Sed leo quam, accumsan sit amet elit gravida, mollis volutpat tellus.
+                                    Proin vestibulum hendrerit fermentum. Phasellus eget elit hendrerit, dictum odio imperdiet, rhoncus enim.
+                                    Suspendisse mattis, augue eleifend aliquam cursus, urna risus semper sem, non molestie ligula augue id arcu.
+                                    Duis placerat vehicula neque, vel fringilla est pulvinar vel.
+                                    Maecenas ultricies eros sed nibh mollis, vel pharetra odio congue.
                                     Nullam in neque arcu. Donec fringilla magna nec justo condimentum, in sagittis urna lacinia.
                                 </Paragraph>
                             </FlowDocument>
