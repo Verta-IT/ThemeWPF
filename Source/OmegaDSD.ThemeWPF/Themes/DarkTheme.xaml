@@ -794,7 +794,12 @@
                             <Setter TargetName="optionMark" Property="Opacity" Value="1" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="{x:Null}">
-                            <Setter TargetName="optionMark" Property="Opacity" Value="0" />
+                            <Setter TargetName="optionMark" Property="Data">
+                                <Setter.Value>
+                                    <RectangleGeometry Rect="0,0,8,8"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter TargetName="optionMark" Property="Opacity" Value="1" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
