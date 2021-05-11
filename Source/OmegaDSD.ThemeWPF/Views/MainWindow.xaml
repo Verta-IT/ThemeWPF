@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:OmegaDSD.ThemeWPF.ViewModels"
         xmlns:views="clr-namespace:OmegaDSD.ThemeWPF.Views"
-        Title="MainWindow"
+        Title="OmegaDSD - WPF Theme Presenter"
         UseLayoutRounding="True"
         TextOptions.TextFormattingMode="{Binding TextFormattingMode, Mode=OneWay}"
         Width="1400"
