@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace OmegaDSD.ThemeWPF.ViewModels
 {
@@ -85,6 +86,14 @@ namespace OmegaDSD.ThemeWPF.ViewModels
         {
             get => selectedObjectPanel;
             set => RaisePropertyChanged(ref selectedObjectPanel, value);
+        }
+
+        private TextFormattingMode textFormattingMode = TextFormattingMode.Display;
+
+        public TextFormattingMode TextFormattingMode
+        {
+            get => textFormattingMode;
+            set => RaisePropertyChanged(ref textFormattingMode, value);
         }
     }
 }
