@@ -308,6 +308,19 @@
         <Setter Property="Foreground" Value="{StaticResource WindowForeground}"/>
     </Style>
 
+    <!--  Text Block  -->
+
+    <Style x:Key="TextBlockStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource TextBlockForeground}"/>
+        <Setter Property="TextWrapping" Value="NoWrap"/>
+        <Setter Property="TextTrimming" Value="None"/>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{StaticResource TextBlockForegroundDisabled}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <!--  Repeat Button  -->
 
     <Style TargetType="{x:Type RepeatButton}">
