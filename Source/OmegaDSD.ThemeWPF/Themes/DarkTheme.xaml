@@ -1590,7 +1590,7 @@
     <Style TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="{StaticResource TextBlockForeground}" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Padding" Value="5" />
+        <Setter Property="Padding" Value="0" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Top" />
         <Setter Property="Template">
