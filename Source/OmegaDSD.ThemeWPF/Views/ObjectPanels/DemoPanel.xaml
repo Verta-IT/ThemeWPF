@@ -343,11 +343,11 @@
                                 <Run Text="Disabled Hyperlink" />
                             </Hyperlink>
                         </TextBlock>
-                        <Label Margin="531,91,0,0"
+                        <Label Margin="531,99,0,0"
                                HorizontalAlignment="Left"
                                VerticalAlignment="Top"
                                Content="Label" />
-                        <Label Margin="630,91,0,0"
+                        <Label Margin="630,99,0,0"
                                HorizontalAlignment="Left"
                                VerticalAlignment="Top"
                                Content="Disabled Label"
