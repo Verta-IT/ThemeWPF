@@ -21,7 +21,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <views:ThemeManagerUserControl Grid.Column="0" />
-        <Border BorderThickness="1" Background="{DynamicResource WindowBackground}" BorderBrush="Gray" Grid.Column="1" Margin="5">
+        <Border BorderThickness="1" Background="{DynamicResource WindowBackground}" BorderBrush="Gray" Grid.Column="1" Margin="0,5,5,5">
             <ContentControl Margin="10" Content="{Binding SelectedObjectPanel, Mode=OneWay}" />
         </Border>
     </Grid>
