@@ -5,22 +5,28 @@
 ![Image of light theme](LightThemePresentation.png)
 
 Styles that has to be explicit assigment:
-1. WindowBackground (Window)
-2. TextBlockStyle (TextBlock)
-3. DataGridCellNoBorderStyle (DataGridCell) - use it to remove border of the selected cell
-4. StrechedDataGridStyle (DataGrid) - use it when one or more columns are streched
-5. AzureToggleSwitchStyle (CheckBox) - use it to change normal CheckBox to a switch
+
+|Key|Type|Info
+----|----|----
+|WindowBackground|Window|
+|TextBlockStyle|TextBlock|
+|DataGridCellNoBorderStyle|DataGridCell| Use it to remove border of the selected cell
+|StrechedDataGridStyle|DataGrid| Use it when one or more columns are streched
+|AzureToggleSwitchStyle|CheckBox| Use it to change normal CheckBox to a switch
 
 ## Dark Theme
 
 ![Image of light theme](DarkThemePresentation.png)
 
 Styles that has to be explicit assigment:
-1. WindowBackground (Window)
-2. TextBlockStyle (TextBlock)
-3. DataGridCellNoBorderStyle (DataGridCell) - use it to remove border of the selected cell
-4. StrechedDataGridStyle (DataGrid) - use it when one or more columns are streched
-5. AzureToggleSwitchStyle (CheckBox) - use it to change normal CheckBox to a switch
+
+|Key|Type|Info
+----|----|----
+|WindowBackground|Window|
+|TextBlockStyle|TextBlock|
+|DataGridCellNoBorderStyle|DataGridCell| Use it to remove border of the selected cell
+|StrechedDataGridStyle|DataGrid| Use it when one or more columns are streched
+|AzureToggleSwitchStyle|CheckBox| Use it to change normal CheckBox to a switch
 
 ## How to use
 
