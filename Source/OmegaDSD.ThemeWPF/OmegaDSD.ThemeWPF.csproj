@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Themes\ThemeCollectionViewModel.cs" />
     <Compile Include="ViewModels\ListsViewModel.cs" />
     <Compile Include="Views\ObjectPanels\BasicControlsPanel.xaml.cs">
       <DependentUpon>BasicControlsPanel.xaml</DependentUpon>
@@ -108,7 +109,6 @@
     </Compile>
     <Compile Include="Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Models\PersonModel.cs" />
-    <Compile Include="Models\ThemeModel.cs" />
     <Compile Include="Themes\Converters\TreeViewMarginConverter.cs" />
     <Compile Include="Themes\DarkTheme.xaml.cs">
       <DependentUpon>DarkTheme.xaml</DependentUpon>

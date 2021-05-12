@@ -11,21 +11,6 @@ using System.Windows.Media;
 
 namespace OmegaDSD.ThemeWPF.ViewModels
 {
-    public class ThemeCollection : ObservableCollection<ThemeModel>
-    {
-        public ThemeCollection()
-        {
-            Array themeList = Enum.GetValues(typeof(Theme));
-
-            Add(new ThemeModel(null));
-
-            foreach (object theme in themeList)
-            {
-                Add(new ThemeModel((Theme)theme));
-            }
-        }
-    }
-
     public class MainWindowViewModel : NotifyPropertyChanged
     {
         public MainWindowViewModel()
@@ -44,41 +29,9 @@ namespace OmegaDSD.ThemeWPF.ViewModels
             {
                 SelectedObjectPanel = ObjectPanelsCollection[0];
             }
-
-            foreach (ThemeModel themeModel in ThemeCollection)
-            {
-                if (themeModel.Theme == ThemeManager.CurrentTheme)
-                {
-                    selectedTheme = themeModel;
-                }
-            }
         }
 
-        private ThemeModel selectedTheme;
         private ContentControl selectedObjectPanel;       
-
-        public ThemeCollection ThemeCollection { get; } = new ThemeCollection();
-
-        public ThemeModel SelectedTheme
-        {
-            get => selectedTheme;
-            set
-            {
-                if (value != selectedTheme)
-                {
-                    if (value.Theme is null)
-                    {
-                        ThemeManager.RemoveTheme();
-                    }
-                    else
-                    {
-                        ThemeManager.ChangeTheme((Theme)value.Theme);
-                    }
-
-                    RaisePropertyChanged(ref selectedTheme, value);
-                }                
-            }
-        }
 
         public ObservableCollection<ContentControl> ObjectPanelsCollection { get; } = new ObservableCollection<ContentControl>();        
 

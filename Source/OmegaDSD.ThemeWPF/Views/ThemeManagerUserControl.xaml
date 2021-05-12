@@ -6,6 +6,7 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:views="clr-namespace:OmegaDSD.ThemeWPF.Views"
              xmlns:vm="clr-namespace:OmegaDSD.ThemeWPF.ViewModels"
+             xmlns:themes="clr-namespace:OmegaDSD.ThemeWPF.Themes"
              d:DesignHeight="300"
              d:DesignWidth="250"
              mc:Ignorable="d">
@@ -50,8 +51,15 @@
             <GroupBox Grid.Row="1"
                       Padding="0"
                       Header="Select theme">
+                <GroupBox.DataContext>
+                    <ObjectDataProvider ObjectType="{x:Type themes:ThemeCollectionViewModel}">
+                        <ObjectDataProvider.ConstructorParameters>
+                            <sys:Boolean>True</sys:Boolean>
+                        </ObjectDataProvider.ConstructorParameters>
+                    </ObjectDataProvider>
+                </GroupBox.DataContext>
                 <ListBox BorderThickness="0"
-                         ItemsSource="{Binding ThemeCollection}"
+                         ItemsSource="{Binding Collection}"
                          SelectedItem="{Binding SelectedTheme, Mode=TwoWay}" />
             </GroupBox>
             <GroupBox Grid.Row="2"
