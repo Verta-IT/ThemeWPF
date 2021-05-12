@@ -51,16 +51,17 @@
             <GroupBox Grid.Row="1"
                       Padding="0"
                       Header="Select theme">
-                <GroupBox.DataContext>
-                    <ObjectDataProvider ObjectType="{x:Type themes:ThemeCollectionViewModel}">
-                        <ObjectDataProvider.ConstructorParameters>
-                            <sys:Boolean>True</sys:Boolean>
-                        </ObjectDataProvider.ConstructorParameters>
-                    </ObjectDataProvider>
-                </GroupBox.DataContext>
                 <ListBox BorderThickness="0"
                          ItemsSource="{Binding Collection}"
-                         SelectedItem="{Binding SelectedTheme, Mode=TwoWay}" />
+                         SelectedItem="{Binding SelectedTheme, Mode=TwoWay}" >
+                    <ListBox.DataContext>
+                        <ObjectDataProvider ObjectType="{x:Type themes:ThemeCollectionViewModel}">
+                            <ObjectDataProvider.ConstructorParameters>
+                                <sys:Boolean>True</sys:Boolean>
+                            </ObjectDataProvider.ConstructorParameters>
+                        </ObjectDataProvider>
+                    </ListBox.DataContext>
+                </ListBox>
             </GroupBox>
             <GroupBox Grid.Row="2"
                       Margin="0,5,0,0"
