@@ -107,7 +107,7 @@
 
     <!-- HyperLink -->
 
-    <SolidColorBrush x:Key="HyperLinkMouseOver" Color="#007ACC" />
+    <SolidColorBrush x:Key="HyperLinkMouseOverForeground" Color="#007ACC" />
 
     <!-- ListBox -->
 
@@ -2812,7 +2812,7 @@
         <Setter Property="TextDecorations" Value="Underline" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Foreground" Value="{StaticResource HyperLinkMouseOver}" />
+                <Setter Property="Foreground" Value="{StaticResource HyperLinkMouseOverForeground}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
                 <Setter Property="Foreground" Value="{StaticResource TextBlockForegroundDisabled}" />
