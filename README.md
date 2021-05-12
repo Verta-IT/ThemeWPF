@@ -41,3 +41,30 @@ Styles that has to be explicit assigment:
 ```
 
 Some controls (such as Window) require an explict assigment of the style and they are listed above in this document under the theme description. Use DynamicResource when you want to change theme in a run time and assigned resoruce key exists in this theme.      
+
+## Use the premade theme view-model to change theme from view layer
+
+1. Add reference to the namespace that contain the view-model
+``` xml
+xmlns:themes="clr-namespace:OmegaDSD.ThemeWPF.Themes"
+```
+2. Assign view-model to the data context of a control
+``` xml
+<ListBox ItemsSource="{Binding Collection}" SelectedItem="{Binding SelectedTheme, Mode=TwoWay}" >
+    <ListBox.DataContext>
+        <themes:ThemeCollectionViewModel/>
+    </ListBox.DataContext>
+</ListBox>
+```
+if you also want to be able to disable the theme:
+``` xml
+<ListBox ItemsSource="{Binding Collection}" SelectedItem="{Binding SelectedTheme, Mode=TwoWay}" >
+    <ListBox.DataContext>
+        <ObjectDataProvider ObjectType="{x:Type themes:ThemeCollectionViewModel}">
+            <ObjectDataProvider.ConstructorParameters>
+                <sys:Boolean>True</sys:Boolean>
+            </ObjectDataProvider.ConstructorParameters>
+        </ObjectDataProvider>
+    </ListBox.DataContext>
+</ListBox>
+```
