@@ -4,7 +4,7 @@
 
 ![Image of light theme](LightThemePresentation.png)
 
-Styles that has to be explicit assigment:
+Resources that have to be assigned explicitly:
 
 |Key|Type|Info
 ----|----|----
@@ -18,7 +18,7 @@ Styles that has to be explicit assigment:
 
 ![Image of light theme](DarkThemePresentation.png)
 
-Styles that has to be explicit assigment:
+Resources that have to be assigned explicitly:
 
 |Key|Type|Info
 ----|----|----
@@ -30,7 +30,7 @@ Styles that has to be explicit assigment:
 
 ## How to use
 
-1. Copy whole 'Themes' folder and paste it to the WPF project.
+1. Copy whole 'Themes' folder and paste it to the target WPF project.
 3. Choose a theme.
 2. Add the resource dictionary of selected theme to the element resource e.g. application resources.
 
