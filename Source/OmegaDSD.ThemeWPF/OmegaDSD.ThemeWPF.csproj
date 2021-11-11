@@ -60,6 +60,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Themes\ThemeCollectionViewModel.cs" />
+    <Compile Include="Themes\Controls\ToggleSwitch.cs" />
     <Compile Include="ViewModels\ListsViewModel.cs" />
     <Compile Include="Views\ObjectPanels\BasicControlsPanel.xaml.cs">
       <DependentUpon>BasicControlsPanel.xaml</DependentUpon>
@@ -92,6 +93,10 @@
       <DependentUpon>ThemeManagerUserControl.xaml</DependentUpon>
     </Compile>
     <Page Include="Themes\DarkTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
