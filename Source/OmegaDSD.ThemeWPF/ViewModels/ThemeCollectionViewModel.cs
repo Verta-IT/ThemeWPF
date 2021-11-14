@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using OmegaDSD.ThemeWPF.Themes;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
 
-namespace OmegaDSD.ThemeWPF.Themes
+namespace OmegaDSD.ThemeWPF.ViewModels
 {
     public enum Theme
     {

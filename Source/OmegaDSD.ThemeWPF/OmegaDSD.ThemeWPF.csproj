@@ -59,7 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Themes\ThemeCollectionViewModel.cs" />
+    <Compile Include="ViewModels\ThemeCollectionViewModel.cs" />
     <Compile Include="Themes\Controls\ToggleSwitch.cs" />
     <Compile Include="ViewModels\ListsViewModel.cs" />
     <Compile Include="Views\ObjectPanels\BasicControlsPanel.xaml.cs">

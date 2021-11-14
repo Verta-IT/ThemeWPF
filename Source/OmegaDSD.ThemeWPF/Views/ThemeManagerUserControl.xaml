@@ -6,7 +6,6 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:views="clr-namespace:OmegaDSD.ThemeWPF.Views"
              xmlns:vm="clr-namespace:OmegaDSD.ThemeWPF.ViewModels"
-             xmlns:themes="clr-namespace:OmegaDSD.ThemeWPF.Themes"
              d:DesignHeight="300"
              d:DesignWidth="250"
              mc:Ignorable="d">
@@ -52,7 +51,7 @@
                       Padding="0"
                       Header="Select Theme">
 				<GroupBox.DataContext>
-					<themes:ThemeCollectionViewModel/>
+					<vm:ThemeCollectionViewModel/>
 				</GroupBox.DataContext>
 				<StackPanel Orientation="Vertical">
 					<CheckBox Content="Disabled" Margin="5" IsChecked="{Binding IsThemeDisabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
