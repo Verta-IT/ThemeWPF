@@ -1,11 +1,11 @@
-﻿using VertaIT.ThemeWPF.Themes;
+﻿using VertaIT.WPF.Themes;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
 
-namespace VertaIT.ThemeWPF.ViewModels
+namespace VertaIT.WPF.ViewModels
 {
     public enum Theme
     {

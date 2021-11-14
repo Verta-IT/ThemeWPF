@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace VertaIT.ThemeWPF.Themes.Controls
+namespace VertaIT.WPF.Themes.Controls
 {
     public class ToggleSwitch : CheckBox
     {

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace VertaIT.ThemeWPF.Views
+namespace VertaIT.WPF.Views
 {
     /// <summary>
     /// Interaction logic for ThemeManagerUserControl.xaml

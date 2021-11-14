@@ -1,7 +1,7 @@
-﻿using VertaIT.ThemeWPF.Views;
+﻿using VertaIT.WPF.Views;
 using System.Windows;
 
-namespace VertaIT.ThemeWPF
+namespace VertaIT.WPF
 {
     /// <summary>
     /// Interaction logic for App.xaml
