@@ -5,7 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace OmegaDSD.ThemeWPF.Themes.Converters
+namespace VertaIT.ThemeWPF.Themes.Converters
 {
     public class TreeViewMarginConverter : IValueConverter
     {

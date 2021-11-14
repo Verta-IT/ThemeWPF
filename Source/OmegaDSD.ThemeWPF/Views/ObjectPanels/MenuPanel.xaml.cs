@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OmegaDSD.ThemeWPF.Views.ObjectPanels
+namespace VertaIT.ThemeWPF.Views.ObjectPanels
 {
     /// <summary>
     /// Interaction logic for MenuPanel.xaml

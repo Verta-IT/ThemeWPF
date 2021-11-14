@@ -1,7 +1,7 @@
-﻿using OmegaDSD.ThemeWPF.Views;
+﻿using VertaIT.ThemeWPF.Views;
 using System.Windows;
 
-namespace OmegaDSD.ThemeWPF
+namespace VertaIT.ThemeWPF
 {
     /// <summary>
     /// Interaction logic for App.xaml

@@ -4,7 +4,7 @@ using System.Windows;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace OmegaDSD.ThemeWPF.Themes
+namespace VertaIT.ThemeWPF.Themes
 {
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
     public class ResourceUriPathAttribute : Attribute

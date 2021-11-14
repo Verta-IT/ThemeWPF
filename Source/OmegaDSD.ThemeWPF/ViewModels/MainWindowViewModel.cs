@@ -1,6 +1,6 @@
-﻿using OmegaDSD.ThemeWPF.Models;
-using OmegaDSD.ThemeWPF.Themes;
-using OmegaDSD.ThemeWPF.Views.ObjectPanels;
+﻿using VertaIT.ThemeWPF.Models;
+using VertaIT.ThemeWPF.Themes;
+using VertaIT.ThemeWPF.Views.ObjectPanels;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Reflection.Emit;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace OmegaDSD.ThemeWPF.ViewModels
+namespace VertaIT.ThemeWPF.ViewModels
 {
     public class MainWindowViewModel : NotifyPropertyChanged
     {

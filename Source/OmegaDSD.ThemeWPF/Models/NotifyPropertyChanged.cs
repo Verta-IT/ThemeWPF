@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace OmegaDSD.ThemeWPF.Models
+namespace VertaIT.ThemeWPF.Models
 {
     public abstract class NotifyPropertyChanged : INotifyPropertyChanged
     {

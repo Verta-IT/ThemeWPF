@@ -1,4 +1,4 @@
-﻿namespace OmegaDSD.ThemeWPF.Models
+﻿namespace VertaIT.ThemeWPF.Models
 {
     public class PersonModel : NotifyPropertyChanged
     {

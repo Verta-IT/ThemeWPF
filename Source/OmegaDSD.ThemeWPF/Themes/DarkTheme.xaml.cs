@@ -1,4 +1,4 @@
-﻿namespace OmegaDSD.ThemeWPF.Themes
+﻿namespace VertaIT.ThemeWPF.Themes
 {
     public partial class DarkTheme
     {

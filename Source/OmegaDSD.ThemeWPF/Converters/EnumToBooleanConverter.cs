@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace OmegaDSD.ThemeWPF.Converters
+namespace VertaIT.ThemeWPF.Converters
 {
     public class EnumToBooleanConverter : IValueConverter
     {
