@@ -1,37 +1,57 @@
-﻿namespace VertaIT.ThemeWPF.Models
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace VertaIT.ThemeWPF.Models
 {
     public class PersonModel : NotifyPropertyChanged
     {
-        public PersonModel(string name, int age)
+        private bool _isActive = true;
+        private string _name = "New";
+        private int _age = 0;
+        private string _selectedItem;
+
+        public PersonModel(string name, int age) : this()
         {
-            this.name = name;
-            this.age = age;
+            _name = name;
+            _age = age;
         }
 
         public PersonModel()
         {
-        }
+            Items = new List<string>
+            {
+                "Car",
+                "Glass",
+                "Cup"
+            };
 
-        private bool isActive = true;
-        private string name = "New";
-        private int age = 0;
+            _selectedItem = Items.FirstOrDefault();
+        }
 
         public string Name
         {
-            get => name;
-            set => RaisePropertyChanged(ref name, value);
+            get => _name;
+            set => RaisePropertyChanged(ref _name, value);
         }
 
         public int Age
         {
-            get => age;
-            set => RaisePropertyChanged(ref age, value);
+            get => _age;
+            set => RaisePropertyChanged(ref _age, value);
         }
 
         public bool IsActive
         {
-            get => isActive;
-            set => RaisePropertyChanged(ref isActive, value);
+            get => _isActive;
+            set => RaisePropertyChanged(ref _isActive, value);
         }
+
+        public string SelectedItem
+        {
+            get => _selectedItem;
+            set => RaisePropertyChanged(ref _selectedItem, value);
+        }
+
+        public List<string> Items { get; }
     }
 }

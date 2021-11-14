@@ -272,11 +272,30 @@
                                 <DataGridTemplateColumn Header="Active" IsReadOnly="True">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <CheckBox HorizontalAlignment="Center" IsChecked="{Binding IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <CheckBox HorizontalAlignment="Center" Width="16" IsChecked="{Binding IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                            </DataGrid.Columns>
+								<DataGridTemplateColumn Header="Items" IsReadOnly="False">
+									<DataGridTemplateColumn.CellTemplate>
+										<DataTemplate>
+											<TextBlock VerticalAlignment="Center" Margin="6,0,0,0" Text="{Binding SelectedItem}" TextTrimming="CharacterEllipsis"/>
+										</DataTemplate>
+									</DataGridTemplateColumn.CellTemplate>
+									<DataGridTemplateColumn.CellEditingTemplate>
+										<DataTemplate>
+											<ComboBox BorderThickness="0" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+										</DataTemplate>
+									</DataGridTemplateColumn.CellEditingTemplate>
+								</DataGridTemplateColumn>
+								<DataGridTemplateColumn Header="Items" IsReadOnly="False">
+									<DataGridTemplateColumn.CellTemplate>
+										<DataTemplate>
+											<ComboBox Background="Transparent" BorderThickness="0" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+										</DataTemplate>
+									</DataGridTemplateColumn.CellTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
                         </DataGrid>
                         <Button Width="94"
                                 Margin="531,10,0,0"
