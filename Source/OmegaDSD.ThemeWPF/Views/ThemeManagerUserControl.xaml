@@ -50,19 +50,17 @@
             </StackPanel>
             <GroupBox Grid.Row="1"
                       Padding="0"
-                      Header="Select theme">
-                <ListBox BorderThickness="0"
-                         ItemsSource="{Binding Collection}"
-                         SelectedItem="{Binding SelectedTheme, Mode=TwoWay}" >
-                    <ListBox.DataContext>
-                        <ObjectDataProvider ObjectType="{x:Type themes:ThemeCollectionViewModel}">
-                            <ObjectDataProvider.ConstructorParameters>
-                                <sys:Boolean>True</sys:Boolean>
-                            </ObjectDataProvider.ConstructorParameters>
-                        </ObjectDataProvider>
-                    </ListBox.DataContext>
-                </ListBox>
-            </GroupBox>
+                      Header="Select Theme">
+				<GroupBox.DataContext>
+					<themes:ThemeCollectionViewModel/>
+				</GroupBox.DataContext>
+				<StackPanel Orientation="Vertical">
+					<CheckBox Content="Disabled" Margin="5" IsChecked="{Binding IsThemeDisabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+					<ListBox BorderThickness="0"
+                         ItemsSource="{Binding Themes}"
+                         SelectedItem="{Binding SelectedTheme, Mode=TwoWay}"/>
+				</StackPanel>
+			</GroupBox>
             <GroupBox Grid.Row="2"
                       Margin="0,5,0,0"
                       Padding="0"

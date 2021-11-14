@@ -3,212 +3,173 @@ using System.Linq;
 using System.Windows;
 using System.Reflection;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
+using System.Collections.ObjectModel;
 
 namespace OmegaDSD.ThemeWPF.Themes
 {
-    [Serializable]
-    internal class MissingThemeDictionaryRelativePath : Exception
-    {
-        public MissingThemeDictionaryRelativePath(string theme) : base($"Missing relative theme path attribute for: {theme}")
-        {
-        }
-    }
-
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
-    public class ThemeDictionaryRelativePath : Attribute
+    public class ResourceUriPathAttribute : Attribute
     {
-        public string Path { get; private set; }
-
-        public ThemeDictionaryRelativePath(string path)
+        public ResourceUriPathAttribute(string path)
         {
             Path = path;
         }
+
+        public string Path { get; }
     }
 
-    public enum Theme
+    public class ThemeManager<T> where T : struct, Enum
     {
-        [ThemeDictionaryRelativePath("Themes/LightTheme.xaml")]
-        Light,
-        [ThemeDictionaryRelativePath("Themes/DarkTheme.xaml")]
-        Dark
-    }
-
-    public static class ThemeManager
-    {
-        /// <summary>
-        /// Get theme relative path saved in the member attribute of the Theme type.
-        /// </summary>
-        /// <param name="theme">A member of Theme for which the relative path is to be returned</param>
-        /// <returns>Theme relative path.</returns>
-        /// <exception cref="ArgumentOutOfRangeException"></exception>
-        /// <exception cref="MissingThemeDictionaryRelativePath"></exception>
-        private static string GetThemeRelativePath(Theme theme)
+        public ThemeManager() : this(Application.Current.Resources.MergedDictionaries)
         {
-            Type enumType = typeof(Theme);
-
-            MemberInfo[] memberInfos = enumType.GetMember(theme.ToString());
-
-            if (memberInfos.Length == 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(theme));
-            }
-
-            MemberInfo valueMemberInfo = memberInfos.FirstOrDefault(m => m.DeclaringType == enumType);
-
-            object[] attribute = valueMemberInfo.GetCustomAttributes(typeof(ThemeDictionaryRelativePath), false);
-
-            if (attribute.Length == 0)
-            {
-                throw new MissingThemeDictionaryRelativePath(theme.ToString());
-            }
-
-            return (attribute[0] as ThemeDictionaryRelativePath).Path;
         }
 
-        /// <summary>
-        /// Get all available theme paths based on Theme members
-        /// </summary>
-        /// <returns>An array that contains all available theme relative paths</returns>
-        public static string[] GetAvailableRelativeThemePaths()
+        public ThemeManager(Collection<ResourceDictionary> mergedDictionaries)
         {
-            Theme[] themes = (Theme[])Enum.GetValues(typeof(Theme));
-
-            List<string> tmp = new List<string>();
-
-            foreach (Theme theme in themes)
-            {
-                tmp.Add(GetThemeRelativePath(theme));
-            }
-
-            return tmp.ToArray();
+            ThemeSource = mergedDictionaries ?? throw new ArgumentNullException(nameof(mergedDictionaries), "Source of the themes cannot be null");
         }
 
-        /// <summary>
-        /// Chceck if there is a theme resource in the application merged dictionary and return it if so.
-        /// </summary>
-        /// <returns>The resource dictionary corresponding to the current theme or null value if theme not found.</returns>
-        private static ResourceDictionary FindThemeDictionaryInAppMergedDictionaries()
-        {
-            string[] availableThemePaths = GetAvailableRelativeThemePaths();
+        public T? CurrentTheme { get; private set; }
 
-            for (int i = 0; i < Application.Current.Resources.MergedDictionaries.Count; i++)
+        public Collection<ResourceDictionary> ThemeSource { get; }
+
+        private static ResourceDictionary CreateResourceDictionary(string uriStr)
+        {
+            return new ResourceDictionary()
             {
-                foreach (string themePath in availableThemePaths)
+                Source = new Uri(uriStr, UriKind.RelativeOrAbsolute)
+            };
+        }
+
+        private static bool IsResourceDictionaryExists(string uriStr)
+        {
+            if (string.IsNullOrEmpty(uriStr))
+            {
+                return false;
+            }
+
+            try
+            {
+                _ = CreateResourceDictionary(uriStr);
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        private static string GetUriPath(T theme)
+        {
+            return typeof(T)
+                .GetMember(theme.ToString())
+                .FirstOrDefault(m => m.DeclaringType == typeof(T))
+                ?.GetCustomAttributes(typeof(ResourceUriPathAttribute), false)
+                .Select(item => ((ResourceUriPathAttribute)item).Path)
+                .FirstOrDefault();
+        }
+
+        private static IEnumerable<(T Theme, string Uri)> GetThemesData()
+        {
+            var themes = (T[])Enum.GetValues(typeof(T));
+
+            return themes
+                .Select(theme => (theme, GetUriPath(theme)))
+                .ToList();
+        }
+
+        private static IEnumerable<(T Theme, string Uri)> GetValidThemesData()
+        {
+            return GetThemesData()
+                .Where(item => IsResourceDictionaryExists(item.Uri))
+                .Select(item => (item.Theme, item.Uri))
+                .ToList();
+        }
+
+        private static IEnumerable<(T Theme, string Uri)> GetThemesThatDoNotExist()
+        {
+            return GetThemesData()
+                .Where(item => !IsResourceDictionaryExists(item.Uri))
+                .Select(item => (item.Theme, item.Uri))
+                .ToList();
+        }
+
+        private (T Theme, int Index, string Uri)? GetActualThemeData()
+        {
+            if (ThemeSource != null)
+            {
+                var themesData = GetValidThemesData();
+
+                for (int i = 0; i < ThemeSource.Count; i++)
                 {
-                    if (Application.Current.Resources.MergedDictionaries[i].Source.OriginalString == themePath)
+                    foreach (var themeData in themesData)
                     {
-                        return Application.Current.Resources.MergedDictionaries[i];
-                    }
-                }
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Chceck if there is a theme resource in the application merged dictionary and convert it to right Theme member.
-        /// </summary>
-        /// <returns>The Theme member corresponding to the current theme or null value if theme not found.</returns>
-        private static Theme? FindThemeInAppMergedDictionaries()
-        {
-            if (ThemeDictionary != null)
-            {
-                Theme[] themes = (Theme[])Enum.GetValues(typeof(Theme));
-
-                foreach (Theme theme in themes)
-                {
-                    if (ThemeDictionary.Source.OriginalString == GetThemeRelativePath(theme))
-                    {
-                        return theme;
-                    }
-                }
-            }
-
-            return null;
-        }
-
-        static ThemeManager()
-        {
-            currentTheme = FindThemeInAppMergedDictionaries();
-        }
-
-        private static Theme? currentTheme = FindThemeInAppMergedDictionaries();
-
-        public static Theme? CurrentTheme
-        {
-            get => currentTheme;
-            private set => currentTheme = value;
-        }
-
-        public static ResourceDictionary ThemeDictionary
-        {
-            get
-            {
-                return FindThemeDictionaryInAppMergedDictionaries();
-            }
-            private set
-            {
-                ResourceDictionary actualThemeDictionary = FindThemeDictionaryInAppMergedDictionaries();
-
-                if (actualThemeDictionary != null)
-                {
-                    if (actualThemeDictionary != value)
-                    {
-                        if (value == null)
+                        if (ThemeSource[i].Source.OriginalString == themeData.Uri)
                         {
-                            Application.Current.Resources.MergedDictionaries.Remove(actualThemeDictionary);
-
-                            return;
+                            return (themeData.Theme, i, themeData.Uri);
                         }
-
-                        int actualDictIndex = Application.Current.Resources.MergedDictionaries.IndexOf(actualThemeDictionary);
-
-                        Application.Current.Resources.MergedDictionaries[actualDictIndex] = value;
                     }
                 }
-                else
-                {
-                    Application.Current.Resources.MergedDictionaries.Add(value);
-                }                
             }
+
+            return null;
         }
 
-        /// <summary>
-        /// Change the application theme as specified in the argument
-        /// </summary>
-        /// <param name="theme">Theme to set</param>
-        /// <exception cref="ArgumentOutOfRangeException"></exception>
-        /// <exception cref="ArgumentException"></exception>
-        /// <exception cref="UriFormatException"></exception>
-        /// <exception cref="MissingThemeDictionaryRelativePath"></exception>
-        public static void ChangeTheme(Theme theme)
+        public void ChangeTheme(T theme)
         {
-            if (CurrentTheme != theme)
+            var actual = GetActualThemeData();
+
+            var uriStr = GetUriPath(theme);
+
+            var newTheme = CreateResourceDictionary(uriStr);
+
+            if (actual.HasValue)
             {
-                try
-                {
-                    ThemeDictionary = new ResourceDictionary()
-                    {
-                        Source = new Uri(GetThemeRelativePath(theme), UriKind.Relative)
-                    };
-
-                    CurrentTheme = theme;
-                }
-                catch
-                {
-                    throw;
-                }
+                ThemeSource[actual.Value.Index] = newTheme;
+            }
+            else
+            {
+                ThemeSource.Add(newTheme);
             }
         }
 
-        /// <summary>
-        /// Remove theme from application merged dictionaries
-        /// </summary>
-        public static void RemoveTheme()
+        public void RemoveTheme()
         {
-            ThemeDictionary = null;
-            CurrentTheme = null;
+            var actual = GetActualThemeData();
+
+            if (actual.HasValue)
+            {
+                ThemeSource.RemoveAt(actual.Value.Index);
+            }
+        }
+
+        public T? GetActualTheme()
+        {
+            var actual = GetActualThemeData();
+
+            return actual.HasValue ? actual.Value.Theme : (T?)null;
+        }
+
+        public IEnumerable<T> GetAvailableThemes()
+        {
+            return GetValidThemesData()
+                .Select(data => data.Theme)
+                .ToList();
+        }
+
+        public Dictionary<T, string> GetIncorrectThemes()
+        {
+            var themes = GetThemesThatDoNotExist();
+
+            var result = new Dictionary<T, string>();
+
+            foreach (var theme in themes)
+            {
+                result.Add(theme.Theme, $"The resource at '{theme.Uri}' of the theme '{theme.Theme}' doesn't exist");
+            }
+
+            return result;
         }
     }
 }
