@@ -26,7 +26,7 @@ Resources that have to be assigned explicitly:
 
 ## How to use
 
-1. Copy whole 'Themes' folder and paste it to the target WPF project.
+1. Copy whole [Themes](https://github.com/Verta-IT/ThemeWPF/tree/main/Source/VertaIT.ThemeWPF/Themes) folder and paste it to the target WPF project.
 2. Add new enum. Add member (name is important only for displaying) with the attribute **ResourceUriPathAttribute(path)** where argument **path** is URI of the theme e.g. **@"pack://application:,,,/Themes/LightTheme.xaml"**. Full example:
 
 ``` cs
@@ -38,7 +38,7 @@ public enum Theme
     Dark
 }
 ```
-4. Use class 'ThemeManager' to operate on themes. Example:
+4. Use class [ThemeManager](https://github.com/Verta-IT/ThemeWPF/blob/main/Source/VertaIT.ThemeWPF/Themes/ThemeManager.cs) to operate on themes. Example:
 
     - Create theme manager. Pass merged dictionary where theme is located or do not pass anything and the 'Application.Current.Resources.MergedDictionaries' will be used.
 
@@ -89,7 +89,7 @@ catch (System.Exception exc) // The exception will ocurre if the theme is incorr
 themeManager.RemoveTheme();
 ```
 
-7. Add the resource dictionary of selected theme to the element resource e.g. application resources (this is the source that has to be passed into constructor argument of the class 'ThemeManager'). This step is not neccessary but do it if you want to make designer work with a theme.
+7. Add the resource dictionary of selected theme to the element resource e.g. application resources (this is the source that has to be passed into constructor argument of the class [ThemeManager](https://github.com/Verta-IT/ThemeWPF/blob/main/Source/VertaIT.ThemeWPF/Themes/ThemeManager.cs)). This step is not neccessary but do it if you want to make designer work with a theme.
 
 ``` xml
 <Application.Resources>
@@ -101,10 +101,10 @@ themeManager.RemoveTheme();
 </Application.Resources>
 ```
 
-For the example of the full 'ThemeManager' implementation see: [LINK](https://github.com/Verta-IT/ThemeWPF/blob/main/Source/VertaIT.ThemeWPF/ViewModels/ThemeCollectionViewModel.cs)
+For the example of the full [ThemeManager](https://github.com/Verta-IT/ThemeWPF/blob/main/Source/VertaIT.ThemeWPF/Themes/ThemeManager.cs) implementation see: [LINK](https://github.com/Verta-IT/ThemeWPF/blob/main/Source/VertaIT.ThemeWPF/ViewModels/ThemeCollectionViewModel.cs)
 
 Some controls (such as Window) require an explict assigment of the style and they are listed above in this document under the theme description. Use DynamicResource when you want to change theme in a run time and assigned resoruce key exists in this theme.      
 
 ## Create your own theme
 
-To create a new theme just copy one of the existing and pase it next to the others. Change the name of the file and add a new member with **ResourceUriPathAttribute** attribute (pass correct URI to the attribue constructor) to the enum that contains your themes. In the new theme change colors placed on the top of the document or/and templates of the controls. That's it, the new theme was added and can be selected by **ThemeManager** class.
+To create a new theme just copy one of the existing and pase it next to the others. Change the name of the file and add a new member with **ResourceUriPathAttribute** attribute (pass correct URI to the attribue constructor) to the enum that contains your themes. In the new theme change colors placed on the top of the document or/and templates of the controls. That's it, the new theme was added and can be selected by [ThemeManager](https://github.com/Verta-IT/ThemeWPF/blob/main/Source/VertaIT.ThemeWPF/Themes/ThemeManager.cs) class.
