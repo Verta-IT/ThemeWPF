@@ -17,6 +17,15 @@ namespace VertaIT.WPF.Themes
         public string Path { get; }
     }
 
+
+    [Serializable]
+    public class ChangeThemeException : Exception
+    {
+        public ChangeThemeException(string message, Exception inner) : base(message, inner) 
+        { 
+        }
+    }
+
     public class ThemeManager<T> where T : struct, Enum
     {
         public ThemeManager() : this(Application.Current.Resources.MergedDictionaries)
@@ -28,10 +37,10 @@ namespace VertaIT.WPF.Themes
             ThemeSource = mergedDictionaries ?? throw new ArgumentNullException(nameof(mergedDictionaries), "Source of the themes cannot be null");
         }
 
-        public T? CurrentTheme { get; private set; }
-
         public Collection<ResourceDictionary> ThemeSource { get; }
 
+        /// <exception cref="System.IO.IOException"/>
+        /// <exception cref="UriFormatException"/>
         private static ResourceDictionary CreateResourceDictionary(string uriStr)
         {
             return new ResourceDictionary()
@@ -115,21 +124,37 @@ namespace VertaIT.WPF.Themes
             return null;
         }
 
+        /// <exception cref="ChangeThemeException"/>
         public void ChangeTheme(T theme)
         {
-            var actual = GetActualThemeData();
-
-            var uriStr = GetUriPath(theme);
-
-            var newTheme = CreateResourceDictionary(uriStr);
-
-            if (actual.HasValue)
+            try
             {
-                ThemeSource[actual.Value.Index] = newTheme;
+                var actual = GetActualThemeData();
+
+                var uriStr = GetUriPath(theme);
+
+                var newTheme = CreateResourceDictionary(uriStr);
+
+                if (actual.HasValue)
+                {
+                    ThemeSource[actual.Value.Index] = newTheme;
+                }
+                else
+                {
+                    ThemeSource.Add(newTheme);
+                }
             }
-            else
+            catch (System.IO.IOException exc)
             {
-                ThemeSource.Add(newTheme);
+                throw new ChangeThemeException($"Problem with theme source. {exc.Message}", exc);
+            }
+            catch (UriFormatException exc)
+            {
+                throw new ChangeThemeException("Theme source URI path format is invalid.", exc);
+            }
+            catch (Exception exc)
+            {
+                throw new ChangeThemeException("Undefined problem during theme changing.", exc);
             }
         }
 
