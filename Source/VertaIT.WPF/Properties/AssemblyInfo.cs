@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OmegaDSD.ThemeWPF")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("VertaIT.WPF")]
+[assembly: AssemblyDescription("VertaIT - WPF Theme Presenter")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OmegaDSD.ThemeWPF")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCompany("Verta IT Sebastian Bąbka")]
+[assembly: AssemblyProduct("VertaIT - WPF Theme Presenter")]
+[assembly: AssemblyCopyright("Copyright © Verta IT Sebastian Bąbka 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

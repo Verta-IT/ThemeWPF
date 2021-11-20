@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("VertaIT.WPF.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Verta IT")]
+[assembly: AssemblyCompany("Verta IT Sebastian Bąbka")]
 [assembly: AssemblyProduct("VertaIT.WPF.Tests")]
-[assembly: AssemblyCopyright("Copyright Verta IT © 2021")]
+[assembly: AssemblyCopyright("Copyright © Verta IT Sebastian Bąbka 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
