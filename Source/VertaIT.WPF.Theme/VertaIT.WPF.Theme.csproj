@@ -50,12 +50,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controls\ToggleSwitch.cs" />
     <Compile Include="Converters\TreeViewMarginConverter.cs" />
-    <Compile Include="Themes\DarkTheme.xaml.cs">
-      <DependentUpon>DarkTheme.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Themes\LightTheme.xaml.cs">
-      <DependentUpon>LightTheme.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Themes\ThemeManager.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VertaIT.WPF.Tests", "VertaI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VertaIT.WPF.Theme", "VertaIT.WPF.Theme\VertaIT.WPF.Theme.csproj", "{8D731A2C-6757-4CCD-B1AF-9552197C40C2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VertaIT.WPF.NetDemo", "VertaIT.WPF.NetDemo\VertaIT.WPF.NetDemo.csproj", "{37A70E7D-FA34-4EBF-9174-BC3DD7BDA43C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VertaIT.WPF.NetTheme", "VertaIT.WPF.NetTheme\VertaIT.WPF.NetTheme.csproj", "{90B36DF4-B4D9-4A6A-9A32-CEACECE7FBF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{8D731A2C-6757-4CCD-B1AF-9552197C40C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D731A2C-6757-4CCD-B1AF-9552197C40C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D731A2C-6757-4CCD-B1AF-9552197C40C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37A70E7D-FA34-4EBF-9174-BC3DD7BDA43C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37A70E7D-FA34-4EBF-9174-BC3DD7BDA43C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37A70E7D-FA34-4EBF-9174-BC3DD7BDA43C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37A70E7D-FA34-4EBF-9174-BC3DD7BDA43C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90B36DF4-B4D9-4A6A-9A32-CEACECE7FBF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90B36DF4-B4D9-4A6A-9A32-CEACECE7FBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90B36DF4-B4D9-4A6A-9A32-CEACECE7FBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90B36DF4-B4D9-4A6A-9A32-CEACECE7FBF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
