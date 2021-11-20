@@ -26,15 +26,15 @@ Resources that have to be assigned explicitly:
 
 ## How to use
 
-1. Copy whole [Themes](https://github.com/Verta-IT/ThemeWPF/tree/main/Source/VertaIT.ThemeWPF/Themes) folder and paste it to the target WPF project.
-2. Add new enum. Add member (name is important only for displaying) with the attribute **ResourceUriPathAttribute(path)** where argument **path** is URI of the theme e.g. **@"pack://application:,,,/Themes/LightTheme.xaml"**. Full example:
+1. Add [VertaIT.WPF.Theme](https://github.com/Verta-IT/ThemeWPF/tree/main/Source/VertaIT.WPF.Theme) project and include reference to it from the WPF application. You can use .dll file instead of including project but there are many problems with the WPF designer. 
+2. Add new enum. Add member (name is important only for displaying) with the attribute **ResourceUriPathAttribute(path)** where argument **path** is URI of the theme e.g. **@"pack://application:,,,/VertaIT.WPF.Theme;component/Themes/LightTheme.xaml"**. Full example:
 
 ``` cs
 public enum Theme
 {
-    [ResourceUriPath(@"pack://application:,,,/Themes/LightTheme.xaml")]
+    [ResourceUriPath(@"pack://application:,,,/VertaIT.WPF.Theme;component/Themes/LightTheme.xaml")]
     Light,
-    [ResourceUriPath(@"pack://application:,,,/Themes/DarkTheme.xaml")]
+    [ResourceUriPath(@"pack://application:,,,/VertaIT.WPF.Theme;component/Themes/DarkTheme.xaml")]
     Dark
 }
 ```
@@ -95,7 +95,7 @@ themeManager.RemoveTheme();
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="pack://application:,,,/Themes/LightTheme.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/VertaIT.WPF.Theme;component/Themes/LightTheme.xaml" />
         </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
 </Application.Resources>
