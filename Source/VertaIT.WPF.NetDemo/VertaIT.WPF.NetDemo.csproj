@@ -7,7 +7,102 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Diskette16.png" />
+    <None Remove="Images\Folder16.png" />
+    <None Remove="Images\ImagesLicenses.txt" />
+    <None Remove="Images\Information16.png" />
+    <None Remove="Images\Magnifier16.png" />
+    <None Remove="Images\Port16.png" />
+    <None Remove="Images\Processor16.png" />
+    <None Remove="Images\SaveAs16.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\VertaIT.WPF.NetTheme\VertaIT.WPF.NetTheme.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Diskette16.png" />
+    <Resource Include="Images\Folder16.png" />
+    <Resource Include="Images\ImagesLicenses.txt" />
+    <Resource Include="Images\Information16.png" />
+    <Resource Include="Images\Magnifier16.png" />
+    <Resource Include="Images\Port16.png" />
+    <Resource Include="Images\Processor16.png" />
+    <Resource Include="Images\SaveAs16.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ObjectPanels\BasicControlsPanel.xaml.cs">
+      <DependentUpon>BasicControlsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ObjectPanels\CalendarPanel.xaml.cs">
+      <DependentUpon>CalendarPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ObjectPanels\DemoPanel.xaml.cs">
+      <DependentUpon>DemoPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ObjectPanels\ExpandersPanel.xaml.cs">
+      <DependentUpon>ExpandersPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ObjectPanels\ListsPanel.xaml.cs">
+      <DependentUpon>ListsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ObjectPanels\MenuPanel.xaml.cs">
+      <DependentUpon>MenuPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ObjectPanels\SlidersPanel.xaml.cs">
+      <DependentUpon>SlidersPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ObjectPanels\TabControlsPanel.xaml.cs">
+      <DependentUpon>TabControlsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ObjectPanels\TreeViewPanel.xaml.cs">
+      <DependentUpon>TreeViewPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ThemeManagerUserControl.xaml.cs">
+      <DependentUpon>ThemeManagerUserControl.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ObjectPanels\BasicControlsPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ObjectPanels\CalendarPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ObjectPanels\DemoPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ObjectPanels\ExpandersPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ObjectPanels\ListsPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ObjectPanels\MenuPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ObjectPanels\SlidersPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ObjectPanels\TabControlsPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ObjectPanels\TreeViewPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ThemeManagerUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>

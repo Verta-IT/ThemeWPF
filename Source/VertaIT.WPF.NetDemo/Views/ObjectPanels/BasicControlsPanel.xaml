@@ -1,0 +1,259 @@
+﻿<UserControl x:Class="VertaIT.WPF.NetDemo.Views.ObjectPanels.BasicControlsPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:VertaIT.WPF.NetDemo.Views.ObjectPanels"
+			 xmlns:controls="clr-namespace:VertaIT.WPF.Theme.Controls;assembly=VertaIT.WPF.NetTheme"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Name="BasicControls"
+             d:DesignHeight="450"
+             d:DesignWidth="579"
+             mc:Ignorable="d">
+    <Grid>
+        <Button Width="94"
+                Margin="0,197,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Button" />
+        <Button Width="149"
+                Margin="101,197,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Disabled Button"
+                IsEnabled="False" />
+        <RepeatButton Margin="0,228,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Content="Repeat Button" />
+        <RepeatButton Margin="101,228,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Content="Disabled Repeat Button"
+                      IsEnabled="False" Width="149" />
+        <CheckBox Height="Auto"
+                  Margin="0,294,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Content="Check Box"
+                  IsChecked="True" />
+        <CheckBox Height="Auto"
+                  Margin="0,319,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Content="Null Check Box"
+                  IsChecked="{x:Null}" />
+        <CheckBox Height="Auto"
+                  Margin="123,294,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Content="Disabled Check Box"
+                  IsChecked="True"
+                  IsEnabled="False" />
+        <CheckBox Height="Auto"
+                  Margin="123,319,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Content="Disabled Null Check Box"
+                  IsChecked="{x:Null}"
+                  IsEnabled="False" />
+        <CheckBox Height="Auto"
+                  Margin="123,269,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Content="Disabled Check Box"
+                  IsEnabled="False" />
+        <CheckBox Height="Auto"
+                  Margin="0,269,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Content="Check Box" />
+		<controls:ToggleSwitch Margin="258,203,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top" />
+		<controls:ToggleSwitch Margin="312,203,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  IsEnabled="False" />
+		<controls:ToggleSwitch Margin="258,228,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  IsChecked="True" />
+		<controls:ToggleSwitch Margin="312,228,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  IsChecked="True"
+                  IsEnabled="False" />
+        <RadioButton Height="Auto"
+                     Margin="0,351,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Content="Radio Button 1" />
+        <RadioButton Height="Auto"
+                     Margin="0,376,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Content="Radio Button 2"
+                     IsChecked="True" />
+        <RadioButton Height="Auto"
+                     Margin="0,401,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Content="Radio Button 3" />
+        <ComboBox Width="250"
+                  Margin="0,0,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  IsEditable="False"
+                  SelectedIndex="0">
+            <ComboBoxItem Content="Combo Box Item 1" />
+            <ComboBoxItem Content="Combo Box Item 2" />
+            <ComboBoxItem Content="Combo Box Item 3" />
+        </ComboBox>
+        <ComboBox Width="250"
+                  Margin="258,0,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  IsEditable="False"
+                  IsEnabled="False"
+                  SelectedIndex="0">
+            <ComboBoxItem Content="Disabled Combo Box Item 1" />
+            <ComboBoxItem Content="Disabled Combo Box Item 2" />
+            <ComboBoxItem Content="Disabled Combo Box Item 3" />
+        </ComboBox>
+        <PasswordBox Width="250"
+                     Margin="0,99,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Password="Password" />
+        <PasswordBox Width="250"
+                     Margin="258,99,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     IsEnabled="False"
+                     Password="Password" />
+        <ComboBox Width="250"
+                  Margin="0,33,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  IsEditable="True"
+                  SelectedIndex="0">
+            <ComboBoxItem Content="Editable Combo Box Item 1" />
+            <ComboBoxItem Content="Editable Combo Box Item 2" />
+            <ComboBoxItem Content="Editable Combo Box Item 3" />
+        </ComboBox>
+        <TextBox Width="250"
+                 Margin="0,68,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Text="Text Box" />
+        <ComboBox Margin="258,33,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  IsEditable="True"
+                  IsEnabled="False"
+                  SelectedIndex="0" Width="250">
+            <ComboBoxItem Content="Disabled Editable Combo Box Item 1" />
+            <ComboBoxItem Content="Disabled Editable Combo Box Item 2" />
+            <ComboBoxItem Content="Disabled Editable Combo Box Item 3" />
+        </ComboBox>
+        <RichTextBox Width="250"
+                     Height="57"
+                     Margin="0,130,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     VerticalScrollBarVisibility="Auto">
+            <FlowDocument>
+                <Paragraph FontWeight="DemiBold" TextAlignment="Center">
+                    Editable Rich Text Box
+                </Paragraph>
+                <Paragraph>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                    Duis sodales condimentum odio et suscipit. Sed leo quam, accumsan sit amet elit gravida, mollis volutpat tellus. 
+                                    Proin vestibulum hendrerit fermentum. Phasellus eget elit hendrerit, dictum odio imperdiet, rhoncus enim. 
+                                    Suspendisse mattis, augue eleifend aliquam cursus, urna risus semper sem, non molestie ligula augue id arcu. 
+                                    Duis placerat vehicula neque, vel fringilla est pulvinar vel. 
+                                    Maecenas ultricies eros sed nibh mollis, vel pharetra odio congue. 
+                                    Nullam in neque arcu. Donec fringilla magna nec justo condimentum, in sagittis urna lacinia.
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox Width="250"
+                     Height="57"
+                     Margin="258,130,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     IsEnabled="False"
+                     VerticalScrollBarVisibility="Auto">
+            <FlowDocument>
+                <Paragraph FontWeight="DemiBold" TextAlignment="Center">
+                    Disabled Rich Text Box
+                </Paragraph>
+                <Paragraph>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                    Duis sodales condimentum odio et suscipit. Sed leo quam, accumsan sit amet elit gravida, mollis volutpat tellus. 
+                                    Proin vestibulum hendrerit fermentum. Phasellus eget elit hendrerit, dictum odio imperdiet, rhoncus enim. 
+                                    Suspendisse mattis, augue eleifend aliquam cursus, urna risus semper sem, non molestie ligula augue id arcu. 
+                                    Duis placerat vehicula neque, vel fringilla est pulvinar vel. 
+                                    Maecenas ultricies eros sed nibh mollis, vel pharetra odio congue. 
+                                    Nullam in neque arcu. Donec fringilla magna nec justo condimentum, in sagittis urna lacinia.
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <TextBox Width="250"
+                 Margin="258,68,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 IsEnabled="False"
+                 Text="Disabled Text Box" />
+        <TextBlock Margin="304,269,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Style="{DynamicResource TextBlockStyle}"
+                   Text="Text Block" />
+        <TextBlock Margin="376,269,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   IsEnabled="False"
+                   Style="{DynamicResource TextBlockStyle}"
+                   Text="Disabled Text Block" />
+        <Label Margin="304,333,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Label" />
+        <Label Margin="376,333,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Content="Disabled Label"
+               IsEnabled="False" />
+        <TextBlock Margin="304,300,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"><Hyperlink>
+                <Run Text="HyperLink" />
+            </Hyperlink></TextBlock>
+        <TextBlock Margin="376,300,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   IsEnabled="False"><Hyperlink>
+                <Run Text="Disabled HyperLink" />
+            </Hyperlink></TextBlock>
+        <RadioButton Height="Auto"
+                     Margin="123,351,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Content="Disabled Radio Button 1"
+                     IsEnabled="False" />
+        <RadioButton Height="Auto"
+                     Margin="123,376,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Content="Disabled Radio Button 2"
+                     IsChecked="True"
+                     IsEnabled="False" />
+        <RadioButton Height="Auto"
+                     Margin="123,401,0,0"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Content="Disabled Radio Button 3"
+                     IsEnabled="False" />
+    </Grid>
+</UserControl>

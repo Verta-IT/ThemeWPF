@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace VertaIT.WPF.NetDemo
+namespace VertaIT.WPF.NetDemo.Views.ObjectPanels
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CalendarPanel.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CalendarPanel : UserControl
     {
-        public MainWindow()
+        public CalendarPanel()
         {
             InitializeComponent();
         }
