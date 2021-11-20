@@ -218,5 +218,11 @@
   <ItemGroup>
     <Resource Include="Images\ImagesLicenses.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VertaIT.WPF.Theme\VertaIT.WPF.Theme.csproj">
+      <Project>{8d731a2c-6757-4ccd-b1af-9552197c40c2}</Project>
+      <Name>VertaIT.WPF.Theme</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

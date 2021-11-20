@@ -1,4 +1,4 @@
-﻿using VertaIT.WPF.Themes;
+﻿using VertaIT.WPF.Theme;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -9,9 +9,9 @@ namespace VertaIT.WPF.ViewModels
 {
     public enum Theme
     {
-        [ResourceUriPath(@"pack://application:,,,/Themes/LightTheme.xaml")]
+        [ResourceUriPath(@"pack://application:,,,/VertaIT.WPF.Theme;component/Themes/LightTheme.xaml")]
         Light,
-        [ResourceUriPath(@"pack://application:,,,/Themes/DarkTheme.xaml")]
+        [ResourceUriPath(@"pack://application:,,,/VertaIT.WPF.Theme;component/Themes/DarkTheme.xaml")]
         Dark
     }
 
