@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30709.132
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VertaIT.WPF.Demo", "VertaIT.WPF\VertaIT.WPF.Demo.csproj", "{BA35D827-0400-4935-A5A5-4440A5C329E4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VertaIT.WPF.Tests", "VertaIT.WPF.Tests\VertaIT.WPF.Tests.csproj", "{8345D01D-F029-4216-8B82-B263C4C0DC03}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VertaIT.WPF.Theme", "VertaIT.WPF.Theme\VertaIT.WPF.Theme.csproj", "{8D731A2C-6757-4CCD-B1AF-9552197C40C2}"
@@ -13,16 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VertaIT.WPF.NetDemo", "Vert
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VertaIT.WPF.NetTheme", "VertaIT.WPF.NetTheme\VertaIT.WPF.NetTheme.csproj", "{90B36DF4-B4D9-4A6A-9A32-CEACECE7FBF2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VertaIT.WPF.Demo", "VertaIT.WPF.Demo\VertaIT.WPF.Demo.csproj", "{BA35D827-0400-4935-A5A5-4440A5C329E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BA35D827-0400-4935-A5A5-4440A5C329E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA35D827-0400-4935-A5A5-4440A5C329E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA35D827-0400-4935-A5A5-4440A5C329E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA35D827-0400-4935-A5A5-4440A5C329E4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8345D01D-F029-4216-8B82-B263C4C0DC03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8345D01D-F029-4216-8B82-B263C4C0DC03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8345D01D-F029-4216-8B82-B263C4C0DC03}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{90B36DF4-B4D9-4A6A-9A32-CEACECE7FBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90B36DF4-B4D9-4A6A-9A32-CEACECE7FBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90B36DF4-B4D9-4A6A-9A32-CEACECE7FBF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA35D827-0400-4935-A5A5-4440A5C329E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA35D827-0400-4935-A5A5-4440A5C329E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA35D827-0400-4935-A5A5-4440A5C329E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA35D827-0400-4935-A5A5-4440A5C329E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
