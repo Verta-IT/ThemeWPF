@@ -12,7 +12,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Themes/LightTheme.xaml" />
+				<ResourceDictionary Source="pack://application:,,,/VertaIT.WPF.Theme;component/Themes/LightTheme.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <ObjectDataProvider x:Key="TextFormattingModeEnumDataProvider"

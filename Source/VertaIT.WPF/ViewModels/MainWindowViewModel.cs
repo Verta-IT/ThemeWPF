@@ -1,5 +1,4 @@
 ﻿using VertaIT.WPF.Models;
-using VertaIT.WPF.Themes;
 using VertaIT.WPF.Views.ObjectPanels;
 using System;
 using System.Collections.ObjectModel;
