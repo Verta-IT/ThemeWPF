@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{BA35D827-0400-4935-A5A5-4440A5C329E4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>VertaIT.WPF</RootNamespace>
+    <RootNamespace>VertaIT.WPF.Demo</RootNamespace>
     <AssemblyName>Verta IT WPF Theme Presenter</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

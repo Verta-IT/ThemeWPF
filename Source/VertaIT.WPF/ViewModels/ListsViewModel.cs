@@ -1,4 +1,4 @@
-﻿using VertaIT.WPF.Models;
+﻿using VertaIT.WPF.Demo.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VertaIT.WPF.ViewModels
+namespace VertaIT.WPF.Demo.ViewModels
 {
     public class ListsViewModel
     {

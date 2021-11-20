@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace VertaIT.WPF.Views.ObjectPanels
+namespace VertaIT.WPF.Demo.Views.ObjectPanels
 {
     /// <summary>
     /// Interaction logic for TreeViewPanel.xaml

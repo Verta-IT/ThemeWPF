@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace VertaIT.WPF.Models
+namespace VertaIT.WPF.Demo.Models
 {
     public class PersonModel : NotifyPropertyChanged
     {

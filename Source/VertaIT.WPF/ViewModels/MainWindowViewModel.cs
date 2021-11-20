@@ -1,5 +1,5 @@
-﻿using VertaIT.WPF.Models;
-using VertaIT.WPF.Views.ObjectPanels;
+﻿using VertaIT.WPF.Demo.Models;
+using VertaIT.WPF.Demo.Views.ObjectPanels;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Reflection.Emit;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace VertaIT.WPF.ViewModels
+namespace VertaIT.WPF.Demo.ViewModels
 {
     public class MainWindowViewModel : NotifyPropertyChanged
     {

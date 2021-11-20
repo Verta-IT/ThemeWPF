@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 
-namespace VertaIT.WPF.ViewModels
+namespace VertaIT.WPF.Demo.ViewModels
 {
     public enum Theme
     {

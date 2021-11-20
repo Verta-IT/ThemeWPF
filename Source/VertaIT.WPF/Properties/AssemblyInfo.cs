@@ -7,7 +7,7 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("VertaIT.WPF")]
+[assembly: AssemblyTitle("VertaIT.WPF.Demo")]
 [assembly: AssemblyDescription("VertaIT - WPF Theme Presenter")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Verta IT Sebastian Bąbka")]
