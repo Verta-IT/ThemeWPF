@@ -58,9 +58,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VertaIT.WPF\VertaIT.WPF.csproj">
-      <Project>{ba35d827-0400-4935-a5a5-4440a5c329e4}</Project>
-      <Name>VertaIT.WPF</Name>
+    <ProjectReference Include="..\VertaIT.WPF.Theme\VertaIT.WPF.Theme.csproj">
+      <Project>{8d731a2c-6757-4ccd-b1af-9552197c40c2}</Project>
+      <Name>VertaIT.WPF.Theme</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

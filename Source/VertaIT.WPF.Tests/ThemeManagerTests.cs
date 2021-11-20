@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
-using VertaIT.WPF.Themes;
+using VertaIT.WPF.Theme;
 
 namespace VertaIT.WPF.Tests
 {
