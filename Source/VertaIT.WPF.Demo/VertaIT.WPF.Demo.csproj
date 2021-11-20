@@ -99,7 +99,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Models\NotifyPropertyChanged.cs" />
