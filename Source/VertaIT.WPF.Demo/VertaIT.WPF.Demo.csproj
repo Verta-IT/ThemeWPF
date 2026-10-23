@@ -67,6 +67,9 @@
     <Compile Include="Views\ObjectPanels\CalendarPanel.xaml.cs">
       <DependentUpon>CalendarPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ObjectPanels\DatePickerPanel.xaml.cs">
+      <DependentUpon>DatePickerPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ObjectPanels\DemoPanel.xaml.cs">
       <DependentUpon>DemoPanel.xaml</DependentUpon>
     </Compile>
@@ -111,6 +114,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ObjectPanels\CalendarPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ObjectPanels\DatePickerPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

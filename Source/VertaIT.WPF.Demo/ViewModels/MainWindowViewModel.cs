@@ -23,6 +23,7 @@ namespace VertaIT.WPF.Demo.ViewModels
             ObjectPanelsCollection.Add(new TreeViewPanel());
             ObjectPanelsCollection.Add(new MenuPanel());
             ObjectPanelsCollection.Add(new CalendarPanel());
+            ObjectPanelsCollection.Add(new DatePickerPanel());
 
             if (ObjectPanelsCollection.Count > 0)
             {

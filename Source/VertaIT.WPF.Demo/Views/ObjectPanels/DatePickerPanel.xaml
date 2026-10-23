@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="VertaIT.WPF.Demo.Views.ObjectPanels.DatePickerPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="263.281"
+             d:DesignWidth="449.219"
+             Name="DatePicker"
+             mc:Ignorable="d">
+	<StackPanel Width="250"
+	            HorizontalAlignment="Left"
+	            Orientation="Vertical">
+		<DatePicker Margin="0,0,0,10" />
+		<DatePicker Margin="0,0,0,10"
+		            SelectedDateFormat="Long" />
+		<DatePicker Margin="0,0,0,10"
+		            IsEnabled="False" />
+		<DatePicker Margin="0,0,0,10"
+		            IsEnabled="False"
+		            SelectedDateFormat="Long" />
+	</StackPanel>
+</UserControl>

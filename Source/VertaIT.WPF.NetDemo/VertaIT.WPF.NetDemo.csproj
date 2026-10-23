@@ -43,6 +43,9 @@
     <Compile Update="Views\ObjectPanels\CalendarPanel.xaml.cs">
       <DependentUpon>CalendarPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ObjectPanels\DatePickerPanel.xaml.cs">
+      <DependentUpon>DatePickerPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\ObjectPanels\DemoPanel.xaml.cs">
       <DependentUpon>DemoPanel.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ObjectPanels\CalendarPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ObjectPanels\DatePickerPanel.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ObjectPanels\DemoPanel.xaml">
