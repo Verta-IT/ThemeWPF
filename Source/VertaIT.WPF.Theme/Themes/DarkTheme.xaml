@@ -86,6 +86,22 @@
 	<SolidColorBrush x:Key="DataGridLinesBorderBrush" Color="#3F3F46" />
 	<SolidColorBrush x:Key="DataGridSortPathFill" Color="#7E7E7E" />
 
+	<!-- DatePicker -->
+
+	<SolidColorBrush x:Key="DatePickerForeground" Color="#FFE5E5E5" />
+	<SolidColorBrush x:Key="DatePickerForegroundDisabled" Color="#FF6D6D6D" />
+	<SolidColorBrush x:Key="DatePickerBackground" Color="#373737" />
+	<SolidColorBrush x:Key="DatePickerBackgroundDisabled" Color="#373737" />
+	<SolidColorBrush x:Key="DatePickerBorderBrush" Color="#434346" />
+	<SolidColorBrush x:Key="DatePickerBorderBrushDisabled" Color="#434346" />
+	<SolidColorBrush x:Key="DatePickerMouseOverBorderBrush" Color="#007ACC" />
+	<SolidColorBrush x:Key="DatePickerFocusedBorderBrush" Color="#FF3296FA" />
+	<SolidColorBrush x:Key="DatePickerWatermarkForeground" Color="#FF999999" />
+	<SolidColorBrush x:Key="DatePickerButtonPathFill" Color="#FFE5E5E5" />
+	<SolidColorBrush x:Key="DatePickerButtonMouseOverPathFill" Color="#007ACC" />
+	<SolidColorBrush x:Key="DatePickerButtonPressedPathFill" Color="#FF1C97EA" />
+	<SolidColorBrush x:Key="DatePickerButtonDisabledPathFill" Color="#FF6D6D6D" />
+
 	<!-- Expander -->
 
 	<SolidColorBrush x:Key="ExpanderForeground" Color="#FFE5E5E5" />
@@ -777,6 +793,177 @@
                                       BorderBrush="{TemplateBinding BorderBrush}"
                                       BorderThickness="{TemplateBinding BorderThickness}" />
 					</StackPanel>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<!--  DatePicker  -->
+
+	<Style x:Key="DatePickerCalendarStyle" TargetType="{x:Type Calendar}" BasedOn="{StaticResource {x:Type Calendar}}">
+		<Setter Property="Margin" Value="0,1,0,0" />
+	</Style>
+
+	<PathGeometry x:Key="PathDataCalendar" Figures="M0.5,2.5 L13.5,2.5 L13.5,13.5 L0.5,13.5 Z M0.5,5.5 L13.5,5.5 M3.5,0.5 L3.5,3.5 M10.5,0.5 L10.5,3.5 M3,8.5 L5,8.5 M6,8.5 L8,8.5 M9,8.5 L11,8.5 M3,11 L5,11 M6,11 L8,11" />
+
+	<Style TargetType="{x:Type DatePickerTextBox}">
+		<Setter Property="Foreground" Value="{StaticResource DatePickerForeground}" />
+		<Setter Property="CaretBrush" Value="{StaticResource DatePickerForeground}" />
+		<Setter Property="SelectionBrush" Value="{StaticResource TextBoxSelectionBrush}" />
+		<Setter Property="SelectionOpacity" Value="0.7" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="Padding" Value="2,1,2,1" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="FocusVisualStyle" Value="{x:Null}" />
+		<Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />
+		<Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type DatePickerTextBox}">
+					<Grid>
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="WatermarkStates">
+								<VisualState x:Name="Unwatermarked" />
+								<VisualState x:Name="Watermarked">
+									<Storyboard>
+										<DoubleAnimation Duration="0" Storyboard.TargetName="PART_ContentHost" Storyboard.TargetProperty="Opacity" To="0" />
+										<DoubleAnimation Duration="0" Storyboard.TargetName="PART_Watermark" Storyboard.TargetProperty="Opacity" To="1" />
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="True">
+							<Grid>
+								<ContentControl x:Name="PART_Watermark"
+                                                Focusable="False"
+                                                IsHitTestVisible="False"
+                                                Opacity="0"
+                                                Foreground="{StaticResource DatePickerWatermarkForeground}"
+                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+								<ScrollViewer x:Name="PART_ContentHost"
+                                              Focusable="False"
+                                              HorizontalScrollBarVisibility="Hidden"
+                                              VerticalScrollBarVisibility="Hidden"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+							</Grid>
+						</Border>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Foreground" Value="{StaticResource DatePickerForegroundDisabled}" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<MultiTrigger>
+				<MultiTrigger.Conditions>
+					<Condition Property="IsInactiveSelectionHighlightEnabled" Value="true" />
+					<Condition Property="IsSelectionActive" Value="false" />
+				</MultiTrigger.Conditions>
+				<Setter Property="SelectionBrush" Value="{StaticResource TextBoxIsInactiveSelectionHighlightBrush}" />
+			</MultiTrigger>
+		</Style.Triggers>
+	</Style>
+
+	<Style x:Key="DatePickerButtonStyle" TargetType="{x:Type Button}">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Focusable" Value="False" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Border Background="{TemplateBinding Background}" Padding="4,0,4,0">
+						<Path x:Name="CalendarPath"
+                              Width="14"
+                              Height="14"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Data="{StaticResource PathDataCalendar}"
+                              Stroke="{StaticResource DatePickerButtonPathFill}"
+                              StrokeThickness="1"
+                              SnapsToDevicePixels="True" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter TargetName="CalendarPath" Property="Stroke" Value="{StaticResource DatePickerButtonMouseOverPathFill}" />
+						</Trigger>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter TargetName="CalendarPath" Property="Stroke" Value="{StaticResource DatePickerButtonPressedPathFill}" />
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter TargetName="CalendarPath" Property="Stroke" Value="{StaticResource DatePickerButtonDisabledPathFill}" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="{x:Type DatePicker}">
+		<Setter Property="Foreground" Value="{StaticResource DatePickerForeground}" />
+		<Setter Property="Background" Value="{StaticResource DatePickerBackground}" />
+		<Setter Property="BorderBrush" Value="{StaticResource DatePickerBorderBrush}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="Padding" Value="1" />
+		<Setter Property="IsTodayHighlighted" Value="True" />
+		<Setter Property="SelectedDateFormat" Value="Short" />
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="FocusVisualStyle" Value="{x:Null}" />
+		<Setter Property="CalendarStyle" Value="{StaticResource DatePickerCalendarStyle}" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type DatePicker}">
+					<Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}"
+                            SnapsToDevicePixels="True">
+						<Grid x:Name="PART_Root"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="Auto" />
+							</Grid.ColumnDefinitions>
+							<DatePickerTextBox x:Name="PART_TextBox"
+                                               Grid.Column="0"
+                                               Focusable="{TemplateBinding Focusable}"
+                                               HorizontalContentAlignment="Stretch"
+                                               VerticalContentAlignment="Center" />
+							<Button x:Name="PART_Button"
+                                    Grid.Column="1"
+                                    Style="{StaticResource DatePickerButtonStyle}" />
+							<Popup x:Name="PART_Popup"
+                                   AllowsTransparency="True"
+                                   Placement="Bottom"
+                                   PlacementTarget="{Binding ElementName=border}"
+                                   StaysOpen="False" />
+						</Grid>
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter TargetName="border" Property="BorderBrush" Value="{StaticResource DatePickerMouseOverBorderBrush}" />
+						</Trigger>
+						<Trigger Property="IsKeyboardFocusWithin" Value="True">
+							<Setter TargetName="border" Property="BorderBrush" Value="{StaticResource DatePickerFocusedBorderBrush}" />
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Foreground" Value="{StaticResource DatePickerForegroundDisabled}" />
+							<Setter TargetName="border" Property="Background" Value="{StaticResource DatePickerBackgroundDisabled}" />
+							<Setter TargetName="border" Property="BorderBrush" Value="{StaticResource DatePickerBorderBrushDisabled}" />
+						</Trigger>
+					</ControlTemplate.Triggers>
 				</ControlTemplate>
 			</Setter.Value>
 		</Setter>
