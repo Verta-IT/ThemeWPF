@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("VertaIT.WPF.Demo")]
 [assembly: AssemblyDescription("VertaIT - WPF Theme Presenter")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Verta IT Sebastian Bąbka")]
+[assembly: AssemblyCompany("Verta IT")]
 [assembly: AssemblyProduct("VertaIT - WPF Theme Presenter")]
-[assembly: AssemblyCopyright("Copyright © Verta IT Sebastian Bąbka 2021")]
+[assembly: AssemblyCopyright("Copyright © Verta IT 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

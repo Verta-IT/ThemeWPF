@@ -8,4 +8,24 @@
     <AdditionalFiles Include="$(MSBuildThisFileDirectory)stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 
+  <!-- NuGet package metadata shared by the theme libraries -->
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'VertaIT.WPF.Theme' Or '$(MSBuildProjectName)' == 'VertaIT.WPF.NetTheme'">
+    <Version>1.0.0</Version>
+    <Authors>Verta IT</Authors>
+    <Company>Verta IT</Company>
+    <Copyright>Copyright © Verta IT 2021</Copyright>
+    <Description>Free and easy-to-use light and dark themes for WPF applications</Description>
+    <PackageTags>wpf;theme;themes;dark-theme;light-theme;styles;controls</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Verta-IT/ThemeWPF</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Verta-IT/ThemeWPF.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)..\artifacts\packages</PackageOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(MSBuildProjectName)' == 'VertaIT.WPF.Theme' Or '$(MSBuildProjectName)' == 'VertaIT.WPF.NetTheme'">
+    <None Include="$(MSBuildThisFileDirectory)..\README.md" Pack="true" PackagePath="\" Visible="false" />
+  </ItemGroup>
+
 </Project>

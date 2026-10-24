@@ -2,7 +2,7 @@
 
 ## Light Theme
 
-![Image of light theme](LightThemePresentation.png)
+![Image of light theme](https://raw.githubusercontent.com/Verta-IT/ThemeWPF/main/LightThemePresentation.png)
 
 Resources that have to be assigned explicitly:
 
@@ -14,7 +14,7 @@ Resources that have to be assigned explicitly:
 
 ## Dark Theme
 
-![Image of light theme](DarkThemePresentation.png)
+![Image of dark theme](https://raw.githubusercontent.com/Verta-IT/ThemeWPF/main/DarkThemePresentation.png)
 
 Resources that have to be assigned explicitly:
 
@@ -40,9 +40,24 @@ xmlns:controls="clr-namespace:VertaIT.WPF.Theme.Controls;assembly=VertaIT.WPF.Th
 <controls:NumericUpDown Minimum="0" Maximum="10" SmallChange="0.5" DecimalPlaces="1" Value="2.5" />
 ```
 
+## Installation
+
+The library is available on NuGet in two packages:
+
+|Package|Target framework|Assembly name used in pack URIs
+----|----|----
+|[VertaIT.WPF.Theme](https://www.nuget.org/packages/VertaIT.WPF.Theme)|.NET Framework 4.7.2|`VertaIT.WPF.Theme`
+|[VertaIT.WPF.NetTheme](https://www.nuget.org/packages/VertaIT.WPF.NetTheme)|.NET 10 (`net10.0-windows`)|`VertaIT.WPF.NetTheme`
+
+``` sh
+dotnet add package VertaIT.WPF.NetTheme
+```
+
+When using the .NET 10 package, replace `VertaIT.WPF.Theme` with `VertaIT.WPF.NetTheme` in the pack URIs and `assembly=` parts of XML namespaces below. Namespaces in code (`VertaIT.WPF.Theme`, `VertaIT.WPF.Theme.Controls`) are the same in both packages.
+
 ## How to use
 
-1. Add [VertaIT.WPF.Theme](https://github.com/Verta-IT/ThemeWPF/tree/main/Source/VertaIT.WPF.Theme) project and include reference to it from the WPF application. You can use .dll file instead of including project but there are many problems with the WPF designer. 
+1. Install the NuGet package (see above), or add [VertaIT.WPF.Theme](https://github.com/Verta-IT/ThemeWPF/tree/main/Source/VertaIT.WPF.Theme) project and include reference to it from the WPF application. You can use .dll file instead of including project but there are many problems with the WPF designer. 
 2. Add new enum. Add member (name is important only for displaying) with the attribute **ResourceUriPathAttribute(path)** where argument **path** is URI of the theme e.g. **@"pack://application:,,,/VertaIT.WPF.Theme;component/Themes/LightTheme.xaml"**. Full example:
 
 ``` cs
