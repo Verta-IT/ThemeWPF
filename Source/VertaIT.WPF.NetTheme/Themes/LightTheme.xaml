@@ -272,6 +272,15 @@
     <SolidColorBrush x:Key="ToggleSwitchBrushDisabled" Color="#FFADB2B5" />
     <SolidColorBrush x:Key="ToggleSwitchPathFill" Color="#FF212121" />
     <SolidColorBrush x:Key="ToggleSwitchDisabledPathFill" Color="#FF666666" />
+
+	<!-- NumericUpDown -->
+
+	<SolidColorBrush x:Key="NumericUpDownButtonPathFill" Color="#FF212121" />
+	<SolidColorBrush x:Key="NumericUpDownButtonMouseOverPathFill" Color="#0078D7" />
+	<SolidColorBrush x:Key="NumericUpDownButtonPressedPathFill" Color="#FF2C628B" />
+	<SolidColorBrush x:Key="NumericUpDownButtonDisabledPathFill" Color="#FF838383" />
+	<SolidColorBrush x:Key="NumericUpDownButtonMouseOverBackground" Color="#E5F3FF" />
+	<SolidColorBrush x:Key="NumericUpDownButtonPressedBackground" Color="#CDE8FF" />
     
     <!-- Window -->
 
@@ -4038,6 +4047,149 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+	<!--  NumericUpDown  -->
+
+	<Style x:Key="NumericUpDownTextBoxStyle" TargetType="{x:Type TextBox}">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="FocusVisualStyle" Value="{x:Null}" />
+		<Setter Property="AllowDrop" Value="False" />
+		<Setter Property="SelectionBrush" Value="{StaticResource TextBoxSelectionBrush}" />
+		<Setter Property="SelectionOpacity" Value="0.7" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type TextBox}">
+					<ScrollViewer x:Name="PART_ContentHost"
+					              Focusable="False"
+					              HorizontalScrollBarVisibility="Hidden"
+					              VerticalScrollBarVisibility="Hidden" />
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<MultiTrigger>
+				<MultiTrigger.Conditions>
+					<Condition Property="IsInactiveSelectionHighlightEnabled" Value="true" />
+					<Condition Property="IsSelectionActive" Value="false" />
+				</MultiTrigger.Conditions>
+				<Setter Property="SelectionBrush" Value="{StaticResource TextBoxIsInactiveSelectionHighlightBrush}" />
+			</MultiTrigger>
+		</Style.Triggers>
+	</Style>
+
+	<Style x:Key="NumericUpDownButtonStyle" TargetType="{x:Type RepeatButton}">
+		<Setter Property="OverridesDefaultStyle" Value="True" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Foreground" Value="{StaticResource NumericUpDownButtonPathFill}" />
+		<Setter Property="Focusable" Value="False" />
+		<Setter Property="IsTabStop" Value="False" />
+		<Setter Property="Delay" Value="400" />
+		<Setter Property="Interval" Value="50" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type RepeatButton}">
+					<Border x:Name="border"
+					        Padding="5,0,5,0"
+					        Background="{TemplateBinding Background}"
+					        SnapsToDevicePixels="True">
+						<Path x:Name="arrowPath"
+						      Width="8"
+						      Height="4"
+						      HorizontalAlignment="Center"
+						      VerticalAlignment="Center"
+						      Data="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}"
+						      Stretch="Fill"
+						      Stroke="{TemplateBinding Foreground}"
+						      StrokeThickness="1.5" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter TargetName="border" Property="Background" Value="{StaticResource NumericUpDownButtonMouseOverBackground}" />
+							<Setter TargetName="arrowPath" Property="Stroke" Value="{StaticResource NumericUpDownButtonMouseOverPathFill}" />
+						</Trigger>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter TargetName="border" Property="Background" Value="{StaticResource NumericUpDownButtonPressedBackground}" />
+							<Setter TargetName="arrowPath" Property="Stroke" Value="{StaticResource NumericUpDownButtonPressedPathFill}" />
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter TargetName="border" Property="Background" Value="Transparent" />
+							<Setter TargetName="arrowPath" Property="Stroke" Value="{StaticResource NumericUpDownButtonDisabledPathFill}" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="{x:Type controls:NumericUpDown}">
+		<Setter Property="Background" Value="{StaticResource TextBoxBackground}" />
+		<Setter Property="BorderBrush" Value="{StaticResource TextBoxBorderBrush}" />
+		<Setter Property="Foreground" Value="{StaticResource TextBoxForeground}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="Padding" Value="2,1,2,1" />
+		<Setter Property="MinHeight" Value="22" />
+		<Setter Property="HorizontalContentAlignment" Value="Right" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="IsTabStop" Value="False" />
+		<Setter Property="FocusVisualStyle" Value="{x:Null}" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type controls:NumericUpDown}">
+					<Border x:Name="border"
+					        Background="{TemplateBinding Background}"
+					        BorderBrush="{TemplateBinding BorderBrush}"
+					        BorderThickness="{TemplateBinding BorderThickness}"
+					        SnapsToDevicePixels="True">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="Auto" />
+							</Grid.ColumnDefinitions>
+							<TextBox x:Name="PART_TextBox"
+							         Grid.Column="0"
+							         Margin="{TemplateBinding Padding}"
+							         HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+							         VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+							         CaretBrush="{TemplateBinding Foreground}"
+							         Foreground="{TemplateBinding Foreground}"
+							         InputScope="Number"
+							         IsReadOnly="{TemplateBinding IsReadOnly}"
+							         Style="{StaticResource NumericUpDownTextBoxStyle}" />
+							<Grid Grid.Column="1">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="*" />
+									<RowDefinition Height="*" />
+								</Grid.RowDefinitions>
+								<RepeatButton x:Name="PART_IncreaseButton"
+								              Grid.Row="0"
+								              Style="{StaticResource NumericUpDownButtonStyle}"
+								              Tag="{StaticResource PathDataArrowUp}" />
+								<RepeatButton x:Name="PART_DecreaseButton"
+								              Grid.Row="1"
+								              Style="{StaticResource NumericUpDownButtonStyle}"
+								              Tag="{StaticResource PathDataArrowDown}" />
+							</Grid>
+						</Grid>
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter TargetName="border" Property="BorderBrush" Value="{StaticResource TextBoxMouseOverBorderBrush}" />
+						</Trigger>
+						<Trigger Property="IsKeyboardFocusWithin" Value="True">
+							<Setter TargetName="border" Property="BorderBrush" Value="{StaticResource TextBoxIsEditingBorderBrush}" />
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Foreground" Value="{StaticResource TextBoxForegroundDisabled}" />
+							<Setter TargetName="border" Property="Background" Value="{StaticResource TextBoxBackgroundDisabled}" />
+							<Setter TargetName="border" Property="BorderBrush" Value="{StaticResource TextBoxBorderBrushDisabled}" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
 
     <!--  TextBox  -->
 

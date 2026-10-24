@@ -82,6 +82,9 @@
     <Compile Include="Views\ObjectPanels\MenuPanel.xaml.cs">
       <DependentUpon>MenuPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ObjectPanels\NumericUpDownPanel.xaml.cs">
+      <DependentUpon>NumericUpDownPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ObjectPanels\SlidersPanel.xaml.cs">
       <DependentUpon>SlidersPanel.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ObjectPanels\MenuPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ObjectPanels\NumericUpDownPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

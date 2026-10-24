@@ -24,6 +24,22 @@ Resources that have to be assigned explicitly:
 |TextBlockStyle|TextBlock|
 |StrechedDataGridStyle|DataGrid| Use it when one or more columns are streched
 
+## Controls
+
+Custom controls included in the library (namespace `VertaIT.WPF.Theme.Controls`). Both themes provide styles for them.
+
+|Control|Info
+----|----
+|ToggleSwitch| On/off switch with an animated thumb
+|NumericUpDown| Numeric input with up/down buttons, keyboard and mouse wheel support. Extra properties: `DecimalPlaces`, `IsReadOnly`
+
+``` xml
+xmlns:controls="clr-namespace:VertaIT.WPF.Theme.Controls;assembly=VertaIT.WPF.Theme"
+
+<controls:ToggleSwitch IsChecked="True" />
+<controls:NumericUpDown Minimum="0" Maximum="10" SmallChange="0.5" DecimalPlaces="1" Value="2.5" />
+```
+
 ## How to use
 
 1. Add [VertaIT.WPF.Theme](https://github.com/Verta-IT/ThemeWPF/tree/main/Source/VertaIT.WPF.Theme) project and include reference to it from the WPF application. You can use .dll file instead of including project but there are many problems with the WPF designer. 

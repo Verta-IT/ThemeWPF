@@ -1,9 +1,9 @@
-﻿using VertaIT.WPF.Theme;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using VertaIT.WPF.Theme;
 
 namespace VertaIT.WPF.Demo.ViewModels
 {
@@ -17,8 +17,8 @@ namespace VertaIT.WPF.Demo.ViewModels
 
     public class ThemeCollectionViewModel : INotifyPropertyChanged
     {
+        private readonly ThemeManager<Theme> _themeManager;
         private Theme? _selectedTheme;
-        private ThemeManager<Theme> _themeManager;
 
         public ThemeCollectionViewModel()
         {
@@ -38,24 +38,7 @@ namespace VertaIT.WPF.Demo.ViewModels
             }
         }
 
-        private void DisplayMessageAboutIncorrectThemes()
-        {
-            var themes = _themeManager.GetIncorrectThemes();
-
-            if (themes.Any())
-            {
-                var strBuilder = new StringBuilder();
-
-                int indexer = 1;
-
-                foreach (var theme in themes)
-                {
-                    strBuilder.AppendLine($"{indexer++}. {theme.Value}");
-                }
-
-                MessageBox.Show(strBuilder.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public List<Theme> Themes { get; }
 
@@ -99,8 +82,6 @@ namespace VertaIT.WPF.Demo.ViewModels
             set => SelectedTheme = value ? (Theme?)null : Themes.FirstOrDefault();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public void RaisePropertyChanged<T>(ref T property, T newValue, [System.Runtime.CompilerServices.CallerMemberName] string propertyName = "")
         {
             property = newValue;
@@ -110,6 +91,25 @@ namespace VertaIT.WPF.Demo.ViewModels
         public void RaisePropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void DisplayMessageAboutIncorrectThemes()
+        {
+            var themes = _themeManager.GetIncorrectThemes();
+
+            if (themes.Any())
+            {
+                var strBuilder = new StringBuilder();
+
+                var indexer = 1;
+
+                foreach (var theme in themes)
+                {
+                    strBuilder.AppendLine($"{indexer++}. {theme.Value}");
+                }
+
+                MessageBox.Show(strBuilder.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
