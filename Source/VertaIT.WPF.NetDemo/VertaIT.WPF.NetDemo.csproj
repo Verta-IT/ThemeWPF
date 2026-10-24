@@ -58,6 +58,9 @@
     <Compile Update="Views\ObjectPanels\MenuPanel.xaml.cs">
       <DependentUpon>MenuPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ObjectPanels\NumericUpDownPanel.xaml.cs">
+      <DependentUpon>NumericUpDownPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\ObjectPanels\SlidersPanel.xaml.cs">
       <DependentUpon>SlidersPanel.xaml</DependentUpon>
     </Compile>
@@ -95,6 +98,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ObjectPanels\MenuPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ObjectPanels\NumericUpDownPanel.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ObjectPanels\SlidersPanel.xaml">

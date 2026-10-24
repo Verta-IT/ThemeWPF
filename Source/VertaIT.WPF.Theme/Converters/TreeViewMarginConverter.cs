@@ -9,6 +9,8 @@ namespace VertaIT.WPF.Theme.Converters
 {
     public class TreeViewMarginConverter : IValueConverter
     {
+        public double Length { get; set; }
+
         public static int GetDepth(TreeViewItem item)
         {
             TreeViewItem parent;
@@ -21,20 +23,6 @@ namespace VertaIT.WPF.Theme.Converters
             return 0;
         }
 
-        private static TreeViewItem GetParent(TreeViewItem item)
-        {
-            DependencyObject parent = VisualTreeHelper.GetParent(item);
-
-            while (!(parent is TreeViewItem || parent is TreeView))
-            {
-                parent = VisualTreeHelper.GetParent(parent);
-            }
-
-            return parent as TreeViewItem;
-        }
-
-        public double Length { get; set; }
-
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return (value is TreeViewItem item) ? new Thickness(Length * GetDepth(item), 0, 0, 0) : new Thickness(0);
@@ -42,7 +30,19 @@ namespace VertaIT.WPF.Theme.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+        }
+
+        private static TreeViewItem GetParent(TreeViewItem item)
+        {
+            var parent = VisualTreeHelper.GetParent(item);
+
+            while (!(parent is TreeViewItem || parent is TreeView))
+            {
+                parent = VisualTreeHelper.GetParent(parent);
+            }
+
+            return parent as TreeViewItem;
         }
     }
 }
