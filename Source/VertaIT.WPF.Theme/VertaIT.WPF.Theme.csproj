@@ -75,4 +75,22 @@
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- Generates version attributes from $(Version), like SDK-style projects do -->
+  <Target Name="GenerateVersionInfo" BeforeTargets="CoreCompile">
+    <PropertyGroup>
+      <VersionInfoFile>$(IntermediateOutputPath)$(MSBuildProjectName).VersionInfo.cs</VersionInfoFile>
+      <VersionInfoNumber>$([System.Text.RegularExpressions.Regex]::Replace($(Version), '[-+].*', ''))</VersionInfoNumber>
+    </PropertyGroup>
+    <ItemGroup>
+      <VersionInfoLine Include="// &lt;auto-generated /&gt;" />
+      <VersionInfoLine Include="[assembly: System.Reflection.AssemblyVersion(&quot;$(VersionInfoNumber)&quot;)]" />
+      <VersionInfoLine Include="[assembly: System.Reflection.AssemblyFileVersion(&quot;$(VersionInfoNumber)&quot;)]" />
+      <VersionInfoLine Include="[assembly: System.Reflection.AssemblyInformationalVersion(&quot;$(Version)&quot;)]" />
+    </ItemGroup>
+    <WriteLinesToFile File="$(VersionInfoFile)" Lines="@(VersionInfoLine)" Overwrite="true" WriteOnlyWhenDifferent="true" />
+    <ItemGroup>
+      <Compile Include="$(VersionInfoFile)" />
+      <FileWrites Include="$(VersionInfoFile)" />
+    </ItemGroup>
+  </Target>
 </Project>
