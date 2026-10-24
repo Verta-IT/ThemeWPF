@@ -47,6 +47,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <!-- Enables "msbuild -t:Pack" for this non-SDK project -->
+    <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.12.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controls\NumericUpDown.cs" />
     <Compile Include="Controls\ToggleSwitch.cs" />
