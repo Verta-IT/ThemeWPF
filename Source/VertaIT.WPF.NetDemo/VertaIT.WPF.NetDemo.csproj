@@ -4,9 +4,11 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AppIcon.ico" />
     <None Remove="Images\Diskette16.png" />
     <None Remove="Images\Folder16.png" />
     <None Remove="Images\ImagesLicenses.txt" />
@@ -22,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="AppIcon.ico" />
     <Resource Include="Images\Diskette16.png" />
     <Resource Include="Images\Folder16.png" />
     <Resource Include="Images\ImagesLicenses.txt" />

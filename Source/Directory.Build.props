@@ -21,11 +21,13 @@
     <RepositoryUrl>https://github.com/Verta-IT/ThemeWPF.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>Icon.png</PackageIcon>
     <PackageOutputPath>$(MSBuildThisFileDirectory)..\artifacts\packages</PackageOutputPath>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(MSBuildProjectName)' == 'VertaIT.WPF.Theme' Or '$(MSBuildProjectName)' == 'VertaIT.WPF.NetTheme'">
     <None Include="$(MSBuildThisFileDirectory)..\README.md" Pack="true" PackagePath="\" Visible="false" />
+    <None Include="$(MSBuildThisFileDirectory)Icon.png" Pack="true" PackagePath="\" Visible="false" />
   </ItemGroup>
 
 </Project>
